@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lecture - Introduction to HTML - Java Camp</title>
+<meta property="og:title" content="Lecture - Introduction to HTML" />
+<meta name="description" content="  30 minutes  Learning Objectives          Learn the concept of HTML tags and attributes      Learn that a web browser renders the HTML      Learn how to structure an HTML page      Learn that indentation makes code easier to read      Learn that non-displayed comments can store programmer notes      " />
+<meta property="og:description" content="  30 minutes  Learning Objectives          Learn the concept of HTML tags and attributes      Learn that a web browser renders the HTML      Learn how to structure an HTML page      Learn that indentation makes code easier to read      Learn that non-displayed comments can store programmer notes      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3002.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3002.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-10-20T10:57:50-05:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lecture - Introduction to HTML",
+    "datePublished": "2016-10-20T10:57:50-05:00",
+    "description": "  30 minutes  Learning Objectives          Learn the concept of HTML tags and attributes      Learn that a web browser renders the HTML      Learn how to structure an HTML page      Learn that indentation makes code easier to read      Learn that non-displayed comments can store programmer notes      ",
+    "url": "http://localhost:4000/units/unit3002.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day11.html">Day 11 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3002.html">Lecture - Introduction to HTML</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3003.html">Lab - HTML Page</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3004.html">Debrief Lab</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3005.html">Lecture - HTML 2</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3006.html">Lab 2</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3007.html">Debrief Lab 2</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3008.html">Quiz</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3009.html">Lunch</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lecture - Introduction to HTML</h3>
+					
+						<p class="description"><ul>
+  <li>30 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Learn the concept of HTML tags and attributes</li>
+      <li>Learn that a web browser renders the HTML</li>
+      <li>Learn how to structure an HTML page</li>
+      <li>Learn that indentation makes code easier to read</li>
+      <li>Learn that non-displayed comments can store programmer notes</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="webpage">Webpage</h4>
+<p>A webpage is a document that is commonly written using HTML (hypertext markup language) that is viewed using a web browser such as Google Chrome, Safari, Mozilla Firefox, or Internet Explorer.</p>
+
+<hr />
+
+<h4 id="markup-language">Markup Language</h4>
+<p>A markup language uses <em>tags</em> that annotate text to change behavior or describe content .  Two markup languages you’ll encounter frequently are HTML, which is used to write web pages, and XML, which is often used to store program data or configuration settings.</p>
+
+<hr />
+
+<h4 id="tags">Tags</h4>
+<p>HTML tags usually follow a standard sequence of opening tag, followed by the text to be tagged, followed by a closing tag.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;tag&gt;</span>text to be tagged<span class="nt">&lt;/tag&gt;</span>
+</code></pre>
+</div>
+
+<p>Use any text editor to complete the following:</p>
+
+<p>1. Create a new text file and write the following text inside the document</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    Hello World!
+</code></pre>
+</div>
+
+<p>2. Save the file as “helloworld.html”<br />
+3. Open the file using a web browser to view it</p>
+
+<p class="success">You should see a very simple webpage with the Hello World! text in it.</p>
+
+<p>4. Add a bold tag to the text in your file with the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;b&gt;</span>Hello World!<span class="nt">&lt;/b&gt;</span>
+</code></pre>
+</div>
+
+<p>5.  Refresh your web browser to see the changes in your helloworld.html webpage.</p>
+
+<p class="success">Your Hello World text should now be in a bold font.</p>
+
+<hr />
+
+<h4 id="attributes">Attributes</h4>
+<p>Many tags can have one or more optional <em>attributes</em> that go inside the opening tag.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;tag</span> <span class="na">attribute=</span><span class="s">"value1"</span> <span class="na">attribute2=</span><span class="s">"value2"</span><span class="nt">&gt;</span>text to be tagged<span class="nt">&lt;/tag&gt;</span>
+</code></pre>
+</div>
+
+<p>6. Let’s change the font face and size of your text with the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">Your Hello World text should now be in the Arial font and much bigger!</p>
+
+<p class="info">Notice how your web browser did not write any of the new words (font, face, size) to the screen.  The browser is built to process HTML tags and render webpages accordingly.</p>
+
+<hr />
+
+<h4 id="nested-tags">Nested Tags</h4>
+<p>Markup languages are also capable of nesting tags to apply multiple behaviors to content.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;tag1&gt;&lt;tag2</span> <span class="na">attribute=</span><span class="s">"value"</span><span class="nt">&gt;</span>text to be tagged<span class="nt">&lt;/tag2&gt;&lt;/tag1&gt;</span>
+</code></pre>
+</div>
+
+<p>7.  Let’s nest our two examples with the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World!<span class="nt">&lt;/font&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">Your Hello World text should now be in the Arial font and much bigger, and just the word Hello should be in bold!</p>
+
+<p>8.  Finally, let’s try one extra special tag:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;sparkle&gt;</span>Make this text shine!<span class="nt">&lt;/sparkle&gt;</span>
+</code></pre>
+</div>
+
+<p class="warning">Does your text sparkle?</p>
+
+<p>9.  Let’s try this variation that uses an attribute instead:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;font</span> <span class="na">sparkle=</span><span class="s">"on"</span><span class="nt">&gt;</span>Make this text shine!<span class="nt">&lt;/font&gt;</span>
+</code></pre>
+</div>
+
+<p class="warning">How about now, does your text sparkle?</p>
+
+<hr />
+
+<h4 id="challenge-question">Challenge Question</h4>
+
+<div title="Question" class="language-html highlighter-rouge"><pre class="highlight"><code>How does your web browser know which keywords are legitimate tags and attributes?  
+Why did <span class="nt">&lt;b&gt;</span> and <span class="nt">&lt;font&gt;</span> work, but <span class="nt">&lt;sparkle&gt;</span> did not?
+</code></pre>
+</div>
+
+<div title="Answer" class="language-html highlighter-rouge"><pre class="highlight"><code>Founded in 1994, the World Wide Web Consortium (W3C) is the main international standards organization for the Web.  It was created to develop protocols and guidelines that ensure long-term growth for the Web.
+
+Programmers that develop web browsers (for example, Google developers make Chrome and Apple developers make Safari) do their best to follow standards set by W3C, the World Wide Web Consortium.  This means recognizing a standard list of tags and attributes and rendering them in an expected fashion.
+
+However, not every browser follows these standards perfectly.  Some browsers have been programmed to recognize extra tags or attributes, or they can interpret and render tags differently.  
+
+Have you ever encountered a webpage that wasn't working, and someone recommended that you try using a different browser?
+</code></pre>
+</div>
+
+
+				</section>
+
+				
+					<section class="right-code">
+						<div title="Key Topics" class="language-html highlighter-rouge"><pre class="highlight">
+<code>Markup tags and attributes
+Nested tags
+W3C standards
+HTML page structure
+Commenting
+</code></pre></div>
+<div title="Source Files" class="language-text highlighter-rouge"><pre class="highlight">
+<code><a href="../files/html/helloworld.html" target="_new">Hello World!</a>
+</code></pre></div>
+<div title="External Resources" class="language-text highlighter-rouge"><pre class="highlight">
+<code><a href="https://www.w3.org/standards/webdesign/htmlcss" target="_new">W3C Standards HTML CSS</a>
+</code></pre></div>
+
+					</section>
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

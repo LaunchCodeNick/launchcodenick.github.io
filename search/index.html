@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Search - Java Camp</title>
+<meta property="og:title" content="Search" />
+<meta name="description" content="This is the course website for LaunchCode’s Java bootcamp." />
+<meta property="og:description" content="This is the course website for LaunchCode’s Java bootcamp." />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="Java Camp" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "headline": "Search",
+    "description": "This is the course website for LaunchCode’s Java bootcamp.",
+    "url": "http://localhost:4000/search/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<ul>
+		
+		
+			<li>
+				<a href="/weeks/week1.html">Week 1 - Foundations</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week2.html">Week 2 - Introduction</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week3.html">Week 3 - Web</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week4.html">Week 4 - Algorithms</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week5.html">Week 5 - SQL Basic</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week6.html">Week 6 - OOP</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week7.html">Week 7 - SQL Pro</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week8.html">Week 8 - Project</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week9.html">Week 9 - Spring Boot</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week10.html">Week 10 - API</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week11.html">Week 11 - Front End</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week12.html">Week 12 - Project</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week13.html">Week 13 - Project</a>
+			</li>
+		
+			<li>
+				<a href="/weeks/week14.html">Week 14 - Project</a>
+			</li>
+		
+		</ul>
+	</section>
+	<section>
+		<h6><a href="http://localhost:4000">Resources</a></h6>
+		<ul>
+		
+		
+			<li>
+				<a href="/resources/tools.html">Software</a>
+			</li>
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<div class="search-page">
+	<h2>Search Results</h2>
+	
+	<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+</div>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+						
+						
+						"days-day1": {
+							"id": "days-day1",
+							"title": "Day 1 - Welcome",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day1.html",                            
+							"content": "day 1\n  this is a test of a colon tag"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day11": {
+							"id": "days-day11",
+							"title": "Day 11 - HTML",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day11.html",                            
+							"content": "First Day of Live Class!"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day12": {
+							"id": "days-day12",
+							"title": "Day 12 - CSS and Page Layouts",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day12.html",                            
+							"content": "Prettier Pages"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day2": {
+							"id": "days-day2",
+							"title": "Day 2",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day2.html",                            
+							"content": "day 1\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day3": {
+							"id": "days-day3",
+							"title": "Day 3",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day3.html",                            
+							"content": "day 3\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day4": {
+							"id": "days-day4",
+							"title": "Day 4",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day4.html",                            
+							"content": "day 2\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"days-day5": {
+							"id": "days-day5",
+							"title": "Day 5",
+							"category": "days",							
+		  				"type": "",							                           
+                            "url": "/days/day5.html",                            
+							"content": "day 1\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+		
+			
+		
+			
+				
+					
+						,
+						
+						"resources-tools": {
+							"id": "resources-tools",
+							"title": "Software",
+							"category": "resources",							
+		  				"type": "",							                           
+                            "url": "/resources/tools.html",                            
+							"content": "Software\n  this is an example of a colon tag\n\n\n\n  \n    \n      Software\n      Version\n      Description\n      Download Link\n    \n    \n      Notepad++\n      7.1\n      Basic text editor\n      https://notepad-plus-plus.org/download/v7.1.html\n    \n    \n      IntelliJ IDEA\n      Ultimate Edition\n      Java IDE\n      https://www.jetbrains.com/idea/"
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"units-unit01": {
+							"id": "units-unit01",
+							"title": "Lecture 1 - Welcome",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit01.html",                            
+							"content": "unit 1\n  this is an example of a colon tag\n\n\n\n\nsuccess text\n\ninfo text\n\nerror text\n\nwarning text\n\ntest\n\n&lt;html&gt;\n&lt;head&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\n\nout.println(\"hello!\");\n\n\n\ndummy text\n\nout.println(\"another example\");"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit02": {
+							"id": "units-unit02",
+							"title": "Lab 1 - Test Lab",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit02.html",                            
+							"content": "lab 1\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit03": {
+							"id": "units-unit03",
+							"title": "Lecture 2",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit03.html",                            
+							"content": "lecture 2\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit04": {
+							"id": "units-unit04",
+							"title": "Lab 2",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit04.html",                            
+							"content": "lab 2\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3002": {
+							"id": "units-unit3002",
+							"title": "Lecture - Introduction to HTML",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3002.html",                            
+							"content": "Webpage\nA webpage is a document that is commonly written using HTML (hypertext markup language) that is viewed using a web browser such as Google Chrome, Safari, Mozilla Firefox, or Internet Explorer.\n\n\n\nMarkup Language\nA markup language uses tags that annotate text to change behavior or describe content .  Two markup languages you’ll encounter frequently are HTML, which is used to write web pages, and XML, which is often used to store program data or configuration settings.\n\n\n\nTags\nHTML tags usually follow a standard sequence of opening tag, followed by the text to be tagged, followed by a closing tag.\n\n    &lt;tag&gt;text to be tagged&lt;/tag&gt;\n\n\n\nUse any text editor to complete the following:\n\n1. Create a new text file and write the following text inside the document\n\n    Hello World!\n\n\n\n2. Save the file as “helloworld.html”\n3. Open the file using a web browser to view it\n\nYou should see a very simple webpage with the Hello World! text in it.\n\n4. Add a bold tag to the text in your file with the following code:\n\n    &lt;b&gt;Hello World!&lt;/b&gt;\n\n\n\n5.  Refresh your web browser to see the changes in your helloworld.html webpage.\n\nYour Hello World text should now be in a bold font.\n\n\n\nAttributes\nMany tags can have one or more optional attributes that go inside the opening tag.\n\n    &lt;tag attribute=\"value1\" attribute2=\"value2\"&gt;text to be tagged&lt;/tag&gt;\n\n\n\n6. Let’s change the font face and size of your text with the following code:\n\n    &lt;font face=\"Arial\" size=\"20\"&gt;Hello World!&lt;/font&gt;\n\n\n\nYour Hello World text should now be in the Arial font and much bigger!\n\nNotice how your web browser did not write any of the new words (font, face, size) to the screen.  The browser is built to process HTML tags and render webpages accordingly.\n\n\n\nNested Tags\nMarkup languages are also capable of nesting tags to apply multiple behaviors to content.\n\n    &lt;tag1&gt;&lt;tag2 attribute=\"value\"&gt;text to be tagged&lt;/tag2&gt;&lt;/tag1&gt;\n\n\n\n7.  Let’s nest our two examples with the following code:\n\n    &lt;font face=\"Arial\" size=\"20\"&gt;&lt;b&gt;Hello&lt;/b&gt; World!&lt;/font&gt;\n\n\n\nYour Hello World text should now be in the Arial font and much bigger, and just the word Hello should be in bold!\n\n8.  Finally, let’s try one extra special tag:\n\n    &lt;sparkle&gt;Make this text shine!&lt;/sparkle&gt;\n\n\n\nDoes your text sparkle?\n\n9.  Let’s try this variation that uses an attribute instead:\n\n    &lt;font sparkle=\"on\"&gt;Make this text shine!&lt;/font&gt;\n\n\n\nHow about now, does your text sparkle?\n\n\n\nChallenge Question\n\nHow does your web browser know which keywords are legitimate tags and attributes?  \nWhy did &lt;b&gt; and &lt;font&gt; work, but &lt;sparkle&gt; did not?\n\n\n\nFounded in 1994, the World Wide Web Consortium (W3C) is the main international standards organization for the Web.  It was created to develop protocols and guidelines that ensure long-term growth for the Web.\n\nProgrammers that develop web browsers (for example, Google developers make Chrome and Apple developers make Safari) do their best to follow standards set by W3C, the World Wide Web Consortium.  This means recognizing a standard list of tags and attributes and rendering them in an expected fashion.\n\nHowever, not every browser follows these standards perfectly.  Some browsers have been programmed to recognize extra tags or attributes, or they can interpret and render tags differently.  \n\nHave you ever encountered a webpage that wasn't working, and someone recommended that you try using a different browser?"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3003": {
+							"id": "units-unit3003",
+							"title": "Lab - HTML Page",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3003.html",                            
+							"content": "lab 2\nx\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3004": {
+							"id": "units-unit3004",
+							"title": "Debrief Lab",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3004.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3005": {
+							"id": "units-unit3005",
+							"title": "Lecture - HTML 2",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3005.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3006": {
+							"id": "units-unit3006",
+							"title": "Lab 2",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3006.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3007": {
+							"id": "units-unit3007",
+							"title": "Debrief Lab 2",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3007.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3008": {
+							"id": "units-unit3008",
+							"title": "Quiz",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3008.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3009": {
+							"id": "units-unit3009",
+							"title": "Lunch",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3009.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"weeks-week1": {
+							"id": "weeks-week1",
+							"title": "Week 1 - Foundations",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week1.html",                            
+							"content": "x\ny\nz\na\nb\nc"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week10": {
+							"id": "weeks-week10",
+							"title": "Week 10 - API",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week10.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week11": {
+							"id": "weeks-week11",
+							"title": "Week 11 - Front End",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week11.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week12": {
+							"id": "weeks-week12",
+							"title": "Week 12 - Project",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week12.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week13": {
+							"id": "weeks-week13",
+							"title": "Week 13 - Project",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week13.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week14": {
+							"id": "weeks-week14",
+							"title": "Week 14 - Project",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week14.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week2": {
+							"id": "weeks-week2",
+							"title": "Week 2 - Introduction",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week2.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week3": {
+							"id": "weeks-week3",
+							"title": "Week 3 - Web",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week3.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week4": {
+							"id": "weeks-week4",
+							"title": "Week 4 - Algorithms",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week4.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week5": {
+							"id": "weeks-week5",
+							"title": "Week 5 - SQL Basic",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week5.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week6": {
+							"id": "weeks-week6",
+							"title": "Week 6 - OOP",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week6.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week7": {
+							"id": "weeks-week7",
+							"title": "Week 7 - SQL Pro",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week7.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week8": {
+							"id": "weeks-week8",
+							"title": "Week 8 - Project",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week8.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"weeks-week9": {
+							"id": "weeks-week9",
+							"title": "Week 9 - Spring Boot",
+							"category": "weeks",							
+		  				"type": "",							                           
+                            "url": "/weeks/week9.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+		
+	};
+    
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
