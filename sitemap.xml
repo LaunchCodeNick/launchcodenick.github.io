@@ -109,4 +109,8 @@
 <loc>http://localhost:4000/files/html/helloworld.html</loc>
 <lastmod>2016-10-19T21:30:08-05:00</lastmod>
 </url>
+<url>
+<loc>http://localhost:4000/files/html/pagestructure.html</loc>
+<lastmod>2016-10-20T14:34:23-05:00</lastmod>
+</url>
 </urlset>
