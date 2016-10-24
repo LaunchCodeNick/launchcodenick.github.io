@@ -16,13 +16,13 @@
 <meta property="og:url" content="http://localhost:4000/units/unit3002.html" />
 <meta property="og:site_name" content="Java Camp" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-10-20T14:45:24-05:00" />
+<meta property="article:published_time" content="2016-10-24T09:50:57-05:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Lecture - Introduction to HTML",
-    "datePublished": "2016-10-20T14:45:24-05:00",
+    "datePublished": "2016-10-24T09:50:57-05:00",
     "description": "  30 minutes  Learning Objectives          Learn the concept of HTML tags and attributes      Learn that a web browser renders the HTML      Learn how to structure an HTML page      Learn that indentation makes code easier to read      Learn that non-displayed comments can store programmer notes      ",
     "url": "http://localhost:4000/units/unit3002.html"
   }
@@ -56,6 +56,12 @@
 		
 		
 		
+		
+		
+		
+			<li>
+				<a href="/units/unit3001.html">Welcome to Camp</a>
+			</li>
 		
 		
 		
@@ -150,7 +156,7 @@
 </code></pre>
 </div>
 
-<p>Use any text editor to complete the following:</p>
+<p>Use <font color="orange">any text editor</font> to complete the following tasks.  We recommend <font color="orange">Notepad++</font> which you can download from the <a href="../resources/tools.html" target="_new">tools page</a>:</p>
 
 <p>1. Create a new text file and write the following text inside the document</p>
 
@@ -215,30 +221,30 @@
 </code></pre>
 </div>
 
-<p class="warning">Does your text sparkle?</p>
+<p class="warning">Does your text sparkle?  Probably not :(</p>
 
-<p>9.  Let’s try this variation that uses an attribute instead:</p>
+<p>9.  Hmmm, let’s try this variation that uses an attribute instead:</p>
 
 <div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;font</span> <span class="na">sparkle=</span><span class="s">"on"</span><span class="nt">&gt;</span>Make this text shine!<span class="nt">&lt;/font&gt;</span>
 </code></pre>
 </div>
 
-<p class="warning">How about now, does your text sparkle?</p>
+<p class="warning">How about now, does your text sparkle? No, it doesn’t?</p>
 
 <hr />
 
 <h4 id="challenge-question">Challenge Question</h4>
 
 <div title="Question" class="language-html highlighter-rouge"><pre class="highlight"><code>How does your web browser know which keywords are legitimate tags and attributes?  
-Why did <span class="nt">&lt;b&gt;</span> and <span class="nt">&lt;font&gt;</span> work, but <span class="nt">&lt;sparkle&gt;</span> did not?
+Why did <span class="nt">&lt;b&gt;</span> and <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span> work, but <span class="nt">&lt;sparkle&gt;</span> and <span class="nt">&lt;font</span> <span class="na">sparkle=</span><span class="s">"on"</span><span class="nt">&gt;</span> did not?
 </code></pre>
 </div>
 
 <div title="Answer" class="language-html highlighter-rouge"><pre class="highlight"><code>Founded in 1994, the World Wide Web Consortium (W3C) is the main international standards organization for the Web.  It was created to develop protocols and guidelines that ensure long-term growth for the Web.
 
-Programmers that develop web browsers (for example, Google developers make Chrome and Apple developers make Safari) do their best to follow standards set by W3C, the World Wide Web Consortium.  This means recognizing a standard list of tags and attributes and rendering them in an expected fashion.
+Programmers that develop web browsers (for example, Google developers make Chrome and Apple developers make Safari) do their best to follow standards set by W3C, the World Wide Web Consortium.  This means recognizing a standard list of tags and attributes and rendering them in an expected fashion.  <span class="nt">&lt;b&gt;</span>, <span class="nt">&lt;font&gt;</span>, and font attributes of "face" and "size" are all recognized standards.  However, <span class="nt">&lt;sparkle&gt;</span> and a font attribute of "sparkle" are not!
 
-However, not every browser follows these standards perfectly.  Some browsers have been programmed to recognize extra tags or attributes, or they can interpret and render tags differently.  
+It's import to know that not every browser follows these standards perfectly.  Some browsers have been programmed to recognize extra tags or attributes, or they can interpret and render tags differently.  
 
 Have you ever encountered a webpage that wasn't working, and someone recommended that you try using a different browser?
 </code></pre>
@@ -248,10 +254,11 @@ Have you ever encountered a webpage that wasn't working, and someone recommended
 
 <h4 id="page-structure">Page Structure</h4>
 
-<p>One standard set forth by W3C is that HTML pages should be structured with 3 main parts:</p>
+<p>One standard set forth by W3C is that HTML pages should be structured with 4 main parts:</p>
 
 <ul>
   <li>a line containing HTML version information</li>
+  <li>a &lt;html&gt; tag</li>
   <li>a header section</li>
   <li>a body, which contains the document’s actual content</li>
 </ul>
@@ -261,12 +268,14 @@ Have you ever encountered a webpage that wasn't working, and someone recommended
 <p>10. Create a new text file called pagestructure.html, type this code, and view it:</p>
 
 <div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;!doctype html&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;title&gt;</span>Look at the browser bar!<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Look at the browser bar!<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
 </code></pre>
 </div>
 
@@ -275,8 +284,10 @@ Have you ever encountered a webpage that wasn't working, and someone recommended
 <p>11.  Change your code to match what’s below.  What do you expect to be different?</p>
 
 <div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;!doctype html&gt;</span>
-    <span class="nt">&lt;head&gt;&lt;title&gt;</span>Look at the browser bar!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;&lt;/body&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Look at the browser bar!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
 </code></pre>
 </div>
 
@@ -296,6 +307,38 @@ However, these formatting items are used by programmers to make code more readab
 </code></pre>
 </div>
 
+<hr />
+
+<h4 id="commenting">Commenting</h4>
+
+<p>You can also include <em>comments</em> for yourself or other programmers who may work on your code in the future.  These comments <font color="orange">will not be displayed by the web browser</font>, but are visible in the source code file only.</p>
+
+<p>Different programming languages have various ways of allowing you to write comments, the following is how it’s done in HTML:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="c">&lt;!-- this is text that is only seen when looking at the code --&gt;</span>
+</code></pre>
+</div>
+
+<p>12.  Try writing your own comments for your file, something similar to:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;!doctype html&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;</span>        
+            <span class="c">&lt;!-- this is what will display in my browser's title bar --&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Look at the browser bar!<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="c">&lt;!-- I wanted to make Hello World! look a lot bigger --&gt;</span>
+            <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/font&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p>That’s all for this lecture, see you in the lab!</p>
+
 				</section>
 
 				
@@ -310,6 +353,7 @@ Commenting
 <div title="Source Files" class="language-text highlighter-rouge"><pre class="highlight">
 <code><a href="../files/html/helloworld.html" target="_new">Hello World!</a>
 <a href="../files/html/pagestructure.html" target="_new">Page Structure</a>
+<a href="../files/html/commenting.html" target="_new">Commenting</a>
 </code></pre></div>
 <div title="External Resources" class="language-text highlighter-rouge"><pre class="highlight">
 <code><a href="https://www.w3.org/standards/webdesign/htmlcss" target="_new">W3C Standards HTML CSS</a>
