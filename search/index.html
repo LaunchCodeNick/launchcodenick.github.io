@@ -267,70 +267,6 @@
 					
 						,
 						
-						"units-unit01": {
-							"id": "units-unit01",
-							"title": "Lecture 1 - Welcome",
-							"category": "units",							
-		  				"type": "",							                           
-                            "url": "/units/unit01.html",                            
-							"content": "unit 1\n  this is an example of a colon tag\n\n\n\n\nsuccess text\n\ninfo text\n\nerror text\n\nwarning text\n\ntest\n\n&lt;html&gt;\n&lt;head&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\n\nout.println(\"hello!\");\n\n\n\ndummy text\n\nout.println(\"another example\");"
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"units-unit02": {
-							"id": "units-unit02",
-							"title": "Lab 1 - Test Lab",
-							"category": "units",							
-		  				"type": "",							                           
-                            "url": "/units/unit02.html",                            
-							"content": "lab 1\nx\ny\nz\na\nb\nc"
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"units-unit03": {
-							"id": "units-unit03",
-							"title": "Lecture 2",
-							"category": "units",							
-		  				"type": "",							                           
-                            "url": "/units/unit03.html",                            
-							"content": "lecture 2\nx\ny\nz\na\nb\nc"
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"units-unit04": {
-							"id": "units-unit04",
-							"title": "Lab 2",
-							"category": "units",							
-		  				"type": "",							                           
-                            "url": "/units/unit04.html",                            
-							"content": "lab 2\nx\ny\nz\na\nb\nc"
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"units-unit3001": {
 							"id": "units-unit3001",
 							"title": "Welcome to Camp",
@@ -429,11 +365,11 @@
 						
 						"units-unit3007": {
 							"id": "units-unit3007",
-							"title": "Lecture",
+							"title": "Lecture - HTML Forms",
 							"category": "units",							
 		  				"type": "",							                           
                             "url": "/units/unit3007.html",                            
-							"content": ""
+							"content": "User input\n\nSo far, you’ve learned how to display text, images, and links on a webpage.  Many of these elements are referred to as output, which are things that our code will display to a user.\n\nBut what if you want to collect information from a user?  For example, Google.com has a text box to ask what a user wants to search.  Elements that a user can type or change the state of are often referred to as input.\n\n\n\nTextbox\n\nThe textbox might be the most common input element across all of programming.  Here in HTML, we’re going to use the following code to put one on our page.\n\n&lt;input type=\"textbox\" name=\"a name for your textbox\" /&gt;\n\n\n\nNotice that there is no separate closing tag!  But the opening tag closes itself with a /&gt;\n\n1.  Create a new html file called textbox.html and write the basic page structure elements and place a textbox named “search” in the body.\n\n    After you've tried, if you need a hint, you can click on the example tab.\n\n\n\n&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n    &lt;input type=\"textbox\" name=\"search\" /&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\n\n2.  View your page in a web browser.  Try typing the word “iPhone” into the textbox and try pressing enter.\n\nYou should be able to type text in the box, but the enter key should not do anything.\n\n\n\nForms\n\nIn order to bring your HTML input elements to life, you’ll need to put them inside a form.  Once a form wraps the input elements on a page, the enter key will submit the webpage which either triggers a page refresh or takes us to a completely new webpage.\n\nWe’re going to use the following code to put one on our page:\n\n&lt;form method=\"get\"&gt;\n    &lt;input type=\"textbox\" name=\"search\" /&gt;\n    &lt;input type=\"submit\" value=\"Go!\" /&gt;  &lt;!-- good practice to put a \"submit\" button in each form --&gt;\n&lt;/form&gt;\n\n\n\n3.  Update your code, type the word “iPhone” into the textbox and press enter again.\n\n4.  Look at the address of your webpage in the web browser.  What do you notice is different?\n\nWhen a form’s action is set to “get”, the values of all input elements in a form get placed on the web address.  We call these querystring parameters.\n\n5.  Place a second textbox on your form named “search2”.\n\n6.  Type the word “iPhone” in the first textbox, and type the word “radio” in the second textbox.  Press the enter key and look at your browser’s address bar.\n\nWhen a form’s method is set to “get”, a “?” is added to the end of the original web address to signal the beginning of querystring parameters.  Then each input element gets added with a name=value convention, and multiple input elements are separated with a “&amp;”.\n\nFor example:\n\nhttp://samplewebsite.com/searchpage.html?search1=iPhone&amp;search2=radio\n\n\n\n\n\nExternal Websites\n\nDid you know that many Internet websites use “get” forms?\n\n7.  Head to http://www.amazon.com and enter iPhone as a search term.  Press enter and look at the address bar.  Can you find the name of the input element and see your search term in the address bar?\n\nAt the time of writing this lesson, the website url looks like this:\n\nhttps://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=iphone\n\n\n\nYou can see very easily that the name of the textbox was “field-keywords” and that my search term is attached to it.  There are also several other querystring parameters that Amazon is using, but if you try searching a few different things, you will see these values aren’t changing, meaning they aren’t affected by a user’s input.\n\n\n\nSubmitting a Form to External Websites\n\nDid you know that we can make our textbox.html page interact with Amazon.com?\n\n8.  Update your form tag with an action attribute with the enter Amazon address before the “?”, and change the name of the first textbox to “field-keywords”:\n\n&lt;form method=\"get\" action=\"https://www.amazon.com/s/ref=nb_sb_noss\"&gt;\n    &lt;input type=\"textbox\" name=\"field-keywords\" /&gt;\n    &lt;input type=\"textbox\" name=\"search2\" /&gt;\n    &lt;input type=\"submit\" value=\"Go!\" /&gt; \n&lt;/form&gt;\n\n\n\n9.  Type “iPhone” in the first textbox and “radio” in the second textbox.  Press enter or click the form button and see what happens.\n\nYour search page should work with Amazon! The second textbox has a name that Amazon doesn’t recognize, so its value is ignored by their program.  However, the first search box should control the search results from Amazon.\n\nChallenge Question\n\nIn your own words, what is happening and how did we make this happen?\n\n\n\nWe visited Amazon.com and tried using their search engine.  We noticed they use querystring parameters, because we could see the search terms go up into the address bar.  We created our own web form and gave a textbox the exact same name that we saw in the Amazon address bar (\"field-keywords\").  Then we told our form, when submitted, to pass all of its infomation via querystring to an Amazon web address."
 						}
 						
 					
@@ -481,6 +417,86 @@
 							"category": "units",							
 		  				"type": "",							                           
                             "url": "/units/unit3010.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3011": {
+							"id": "units-unit3011",
+							"title": "Lecture",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3011.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3012": {
+							"id": "units-unit3012",
+							"title": "Lab",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3012.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3013": {
+							"id": "units-unit3013",
+							"title": "Debrief",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3013.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3014": {
+							"id": "units-unit3014",
+							"title": "Quiz",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3014.html",                            
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"units-unit3015": {
+							"id": "units-unit3015",
+							"title": "Career Planning",
+							"category": "units",							
+		  				"type": "",							                           
+                            "url": "/units/unit3015.html",                            
 							"content": ""
 						}
 						
