@@ -10,20 +10,20 @@
 		<!-- Begin Jekyll SEO tag v2.0.0 -->
 <title>Debrief - Java Camp</title>
 <meta property="og:title" content="Debrief" />
-<meta name="description" content="Debrief" />
-<meta property="og:description" content="Debrief" />
+<meta name="description" content="  15 minutes  Class Debrief  Debrief Objectives          Layout choices      Multiple radio button groups      User experience      " />
+<meta property="og:description" content="  15 minutes  Class Debrief  Debrief Objectives          Layout choices      Multiple radio button groups      User experience      " />
 <link rel="canonical" href="http://localhost:4000/units/unit3009.html" />
 <meta property="og:url" content="http://localhost:4000/units/unit3009.html" />
 <meta property="og:site_name" content="Java Camp" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-10-25T11:28:57-05:00" />
+<meta property="article:published_time" content="2016-11-01T10:53:03-05:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Debrief",
-    "datePublished": "2016-10-25T11:28:57-05:00",
-    "description": "Debrief",
+    "datePublished": "2016-11-01T10:53:03-05:00",
+    "description": "  15 minutes  Class Debrief  Debrief Objectives          Layout choices      Multiple radio button groups      User experience      ",
     "url": "http://localhost:4000/units/unit3009.html"
   }
 </script>
@@ -106,25 +106,25 @@
 		
 		
 			<li>
-				<a href="/units/unit3010.html">Social exercise</a>
+				<a href="/units/unit3010.html">Social Exercise - Web Pages</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3011.html">Lecture</a>
+				<a href="/units/unit3011.html">Lecture - Web Server</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3012.html">Lab</a>
+				<a href="/units/unit3012.html">Lab - Install Java JDK and Apache Tomcat</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3013.html">Debrief</a>
+				<a href="/units/unit3013.html">Lab - Test Apache Tomcat</a>
 			</li>
 		
 		
@@ -150,11 +150,72 @@
 				<section class="left-docs">
 					<h3>Debrief</h3>
 					
-						<p class="description"><p>Debrief</p>
+						<p class="description"><ul>
+  <li>15 minutes</li>
+  <li>Class Debrief</li>
+  <li>Debrief Objectives
+    <ul>
+      <li>Layout choices</li>
+      <li>Multiple radio button groups</li>
+      <li>User experience</li>
+    </ul>
+  </li>
+</ul>
 </p>                        
 					
                     
-					
+					<hr />
+
+<h4 id="layout-choices">Layout Choices</h4>
+
+<p>When building a web page, you may need to make choices about how things are laid out.</p>
+
+<p align="center"><img src="../images/html/shopping_cart/cart_final.jpg" /></p>
+
+<p>This shopping cart has Hamburger first, followed by Fries, followed by Soda, followed by Ice Cream.</p>
+
+<p>Is this a better sequence than Soda, Ice Cream, Fries, Hamburger?</p>
+
+<p>Why is one sequence better than other?</p>
+
+<hr />
+
+<h4 id="activity">Activity</h4>
+
+<p>In this last lab, you only worked with one group of radio buttons.  What did you notice about the names of the buttons?</p>
+
+<p>How would you create two different groups of radio buttons?  For example, how would you create a form with a group of radio buttons for car colors, and a group of radio buttons for manual or automatic transmission?</p>
+
+<div title="Cover" class="language-html highlighter-rouge"><pre class="highlight"><code>You can click the Answer tab to see how to create two groups of radio buttons on the same web page.
+</code></pre>
+</div>
+
+<div title="Answer" class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_color"</span> <span class="na">value=</span><span class="s">"black"</span> <span class="na">checked</span> <span class="nt">/&gt;</span> Black
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_color"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span> Blue
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_color"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="nt">/&gt;</span> Red
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_color"</span> <span class="na">value=</span><span class="s">"white"</span> <span class="nt">/&gt;</span> White
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_transmission"</span> <span class="na">value=</span><span class="s">"automatic"</span> <span class="na">checked</span> <span class="nt">/&gt;</span> Automatic
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"car_transmission"</span> <span class="na">value=</span><span class="s">"manual"</span> <span class="nt">/&gt;</span> Manual
+
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="user-experience">User Experience</h4>
+
+<p>In this last lab, we used readonly textboxes to display the price of each item.</p>
+
+<p>When a user sees a textbox, what will they expect?</p>
+
+<p class="info">Users expect that they can edit the information in a textbox.  A readonly box can’t be edited or even clicked into, and this experience can be confusing or awkward for a new user. Some potential solutions include using a different type of input control, or making the textbox look less like a textbox by removing its border.</p>
+
+<hr />
+
+<h4 id="questions">Questions?</h4>
+
+<p>What other questions or insights do you have?</p>
 
 				</section>
 

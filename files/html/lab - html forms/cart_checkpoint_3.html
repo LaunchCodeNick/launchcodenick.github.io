@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Samburgers Shopping Cart</title>
+</head>
+<body>
+    <form method="get">    
+        <font face="Arial">
+            <font size="20">Shopping Cart</font><br>
+            <br>
+            Price, Quantity, Item<br>
+            <hr>
+            <!-- Hamburger line item -->
+            <input type="textbox" name="hamburger_price" value="$4.95" size="3" readonly /> 
+            <input type="textbox" name="hamburger_quantity" size="3" value="0" /> 
+            Hamburger
+            <input type="checkbox" name="hamburger_cheese">Cheese (+$0.30)
+            <input type="checkbox" name="hamburger_sauce">Special Sauce (+$0.30)
+            <br>
+            <!-- End of the Hamburger line item -->
+            <!-- Fries line item -->
+            <input type="textbox" name="fries_price" value="$1.89" size="3" readonly /> 
+            <input type="textbox" name="fries_quantity" size="3" value="0" /> 
+            Fries
+            <input type="radio" name="fries_type" value="regular" checked /> Regular
+            <input type="radio" name="fries_type" value="cajun" /> Cajun
+            <br>            
+            <!-- End of the Fries line item -->            
+            <br>            
+            Calculate Your Order
+            <hr>                    
+            <input type="submit" />  
+        </font>
+    </form>
+</body>
+</html>

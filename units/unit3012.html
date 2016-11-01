@@ -8,22 +8,22 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="/js/main.js"></script>
 		<!-- Begin Jekyll SEO tag v2.0.0 -->
-<title>Lab - Java Camp</title>
-<meta property="og:title" content="Lab" />
-<meta name="description" content="lab" />
-<meta property="og:description" content="lab" />
+<title>Lab - Install Java JDK and Apache Tomcat - Java Camp</title>
+<meta property="og:title" content="Lab - Install Java JDK and Apache Tomcat" />
+<meta name="description" content="  30 minutes          Install Java JDK      Install Apache Tomcat      " />
+<meta property="og:description" content="  30 minutes          Install Java JDK      Install Apache Tomcat      " />
 <link rel="canonical" href="http://localhost:4000/units/unit3012.html" />
 <meta property="og:url" content="http://localhost:4000/units/unit3012.html" />
 <meta property="og:site_name" content="Java Camp" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-10-25T11:28:57-05:00" />
+<meta property="article:published_time" content="2016-11-01T10:53:03-05:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Lab",
-    "datePublished": "2016-10-25T11:28:57-05:00",
-    "description": "lab",
+    "headline": "Lab - Install Java JDK and Apache Tomcat",
+    "datePublished": "2016-11-01T10:53:03-05:00",
+    "description": "  30 minutes          Install Java JDK      Install Apache Tomcat      ",
     "url": "http://localhost:4000/units/unit3012.html"
   }
 </script>
@@ -106,25 +106,25 @@
 		
 		
 			<li>
-				<a href="/units/unit3010.html">Social exercise</a>
+				<a href="/units/unit3010.html">Social Exercise - Web Pages</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3011.html">Lecture</a>
+				<a href="/units/unit3011.html">Lecture - Web Server</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3012.html">Lab</a>
+				<a href="/units/unit3012.html">Lab - Install Java JDK and Apache Tomcat</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3013.html">Debrief</a>
+				<a href="/units/unit3013.html">Lab - Test Apache Tomcat</a>
 			</li>
 		
 		
@@ -148,13 +148,124 @@
 		<div class="main">
 			<section class="doc-content">
 				<section class="left-docs">
-					<h3>Lab</h3>
+					<h3>Lab - Install Java JDK and Apache Tomcat</h3>
 					
-						<p class="description"><p>lab</p>
+						<p class="description"><ul>
+  <li>30 minutes
+    <ul>
+      <li>Install Java JDK</li>
+      <li>Install Apache Tomcat</li>
+    </ul>
+  </li>
+</ul>
 </p>                        
 					
                     
-					
+					<hr />
+
+<h4 id="install-java-jdk-18-on-windows">Install Java JDK 1.8 on Windows</h4>
+
+<p>1.  Please start this lab by downloading the latest version of the Java SE Development Kit 8.  You can find the download link from our <a href="../resources/tools.html">tools page</a>.</p>
+
+<p>Windows users look for an .exe file that is a 32-bit or 64-bit version depending on the operating system that you are running.  If in doubt, you can right-click on Computer and choose ‘Properties’.</p>
+
+<p align="center"><img src="../images/html/web_server/windows_bit.png" /></p>
+
+<p>When you have determined whether your system is 32-bit or 64-bit, choose one of the following files:</p>
+
+<ul>
+  <li>Windows 32-bit: download the Windows x86 .exe file</li>
+  <li>Windows 64-bit: download Windows x64 .exe file</li>
+</ul>
+
+<p>2.  Install the Java JDK to the recommended directory.</p>
+
+<p class="info">Typically, this is something like C:\Program Files\Java\</p>
+
+<hr />
+
+<h4 id="install-apache-tomcat-8-on-windows">Install Apache Tomcat 8 on Windows</h4>
+
+<p>3.  Please start this lab by downloading the latest version of Apache Tomcat 8.  You can find the download link from our <a href="../resources/tools.html">tools page</a>.</p>
+
+<p>Windows users look for a .zip file that is a 32-bit or 64-bit version depending on the operating system that you are running.</p>
+
+<p>4.  Extract the .zip file to C:\apache</p>
+
+<p>Your files should now hold a directory structure similar to C:\apache\apache-tomcat-8.5.6:</p>
+
+<p align="center"><img src="../images/html/web_server/install_folder.png" /></p>
+
+<hr />
+
+<h4 id="set-windows-path-variables-for-java-and-apache">Set Windows PATH variables for Java and Apache</h4>
+
+<p>On Windows, PATH variables help the command line find where a program is located.</p>
+
+<p>Let’s say that we installed a program called TEST.exe into a folder at C:\FOLDER.</p>
+
+<p>I can pull up a command line window by running the ‘cmd’ command:</p>
+
+<p align="center"><img src="../images/html/web_server/cmd.png" /></p>
+
+<p>If we navigate into the directory C:\FOLDER, we can run a command called test.exe from the command line.</p>
+
+<p align="center"><img src="../images/html/web_server/folder_test_success.png" /></p>
+
+<p>But if I move out of the directory, to say C:\, the computer will not know where to find test.exe anymore.</p>
+
+<p align="center"><img src="../images/html/web_server/folder_test_error.png" /></p>
+
+<p>There are two solutions to this problem.  The first is to run programs with their full name and location like this:</p>
+
+<p align="center"><img src="../images/html/web_server/folder_test_fullname.png" /></p>
+
+<p>The second solution is to add C:\FOLDER to the Windows PATH variable.  If we do this, we can run test.exe from just about any location.  The computer will know to check every directory that is included in the PATH variable.</p>
+
+<p>We need to do this for key Java and Apache Tomcat directories.</p>
+
+<p>5.  Create a Java environment variable.</p>
+
+<p>Right-click on Computer and go to Properties &gt; Advanced System Settings &gt; Environment Variables</p>
+
+<p>Click ‘New’.  Enter JAVA_HOME as the variable name, and the location of your Java directory as the variable value.  On my computer this is C:\Program Files\Java\jdk1.8.0_101</p>
+
+<p align="center"><img src="../images/html/web_server/variables_JAVA_HOME.png" /></p>
+
+<p>6.  Create an Apache Tomcat variable.</p>
+
+<p>Click ‘New’ again.  Enter CATALINA_HOME as the variable name, and the location of your Apache directory as the variable value.  On my computer this is C:\apache\apache-tomcat-8.5.6</p>
+
+<p align="center"><img src="../images/html/web_server/variables_CATALINA_HOME.png" /></p>
+
+<p>7.  Add your JAVA_HOME and CATALINA_HOME variables to the PATH variable.</p>
+
+<p>Find the PATH variable, and click ‘Edit’.  On the very end of the variable value, at the far right, add the following (there are semicolons in front of the % signs):</p>
+
+<p>;%JAVA_HOME%\bin ;%CATALINA_HOME%\bin</p>
+
+<p>8.  Close the Properties windows.  Open a command line window by typing ‘cmd’ in the program search box above the Windows logo.</p>
+
+<p>Type the following to test your Java installation and variables: java -version</p>
+
+<p>Type the following to test your Apache installation and variables: version</p>
+
+<p align="center"><img src="../images/html/web_server/windows_success.png" /></p>
+
+<p class="success">If you see something like the picture above, you’re ready to go!</p>
+
+<hr />
+
+<h4 id="install-java-jdk-on-mac-osx">Install Java JDK on Mac OSX</h4>
+
+<p>1.</p>
+
+<hr />
+
+<h4 id="install-apache-tomcat-8-on-mac-osx">Install Apache Tomcat 8 on Mac OSX</h4>
+
+<p>1.</p>
+
 
 				</section>
 

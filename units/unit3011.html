@@ -8,22 +8,22 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="/js/main.js"></script>
 		<!-- Begin Jekyll SEO tag v2.0.0 -->
-<title>Lecture - Java Camp</title>
-<meta property="og:title" content="Lecture" />
-<meta name="description" content="lecture" />
-<meta property="og:description" content="lecture" />
+<title>Lecture - Web Server - Java Camp</title>
+<meta property="og:title" content="Lecture - Web Server" />
+<meta name="description" content="  20 minutes  Learning Objectives          Discuss how dynamic web pages work      Discuss common web programming languages      Discuss the role of a web server      Discuss common Java web servers      " />
+<meta property="og:description" content="  20 minutes  Learning Objectives          Discuss how dynamic web pages work      Discuss common web programming languages      Discuss the role of a web server      Discuss common Java web servers      " />
 <link rel="canonical" href="http://localhost:4000/units/unit3011.html" />
 <meta property="og:url" content="http://localhost:4000/units/unit3011.html" />
 <meta property="og:site_name" content="Java Camp" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-10-25T11:28:57-05:00" />
+<meta property="article:published_time" content="2016-11-01T10:53:03-05:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Lecture",
-    "datePublished": "2016-10-25T11:28:57-05:00",
-    "description": "lecture",
+    "headline": "Lecture - Web Server",
+    "datePublished": "2016-11-01T10:53:03-05:00",
+    "description": "  20 minutes  Learning Objectives          Discuss how dynamic web pages work      Discuss common web programming languages      Discuss the role of a web server      Discuss common Java web servers      ",
     "url": "http://localhost:4000/units/unit3011.html"
   }
 </script>
@@ -106,25 +106,25 @@
 		
 		
 			<li>
-				<a href="/units/unit3010.html">Social exercise</a>
+				<a href="/units/unit3010.html">Social Exercise - Web Pages</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3011.html">Lecture</a>
+				<a href="/units/unit3011.html">Lecture - Web Server</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3012.html">Lab</a>
+				<a href="/units/unit3012.html">Lab - Install Java JDK and Apache Tomcat</a>
 			</li>
 		
 		
 		
 			<li>
-				<a href="/units/unit3013.html">Debrief</a>
+				<a href="/units/unit3013.html">Lab - Test Apache Tomcat</a>
 			</li>
 		
 		
@@ -148,13 +148,129 @@
 		<div class="main">
 			<section class="doc-content">
 				<section class="left-docs">
-					<h3>Lecture</h3>
+					<h3>Lecture - Web Server</h3>
 					
-						<p class="description"><p>lecture</p>
+						<p class="description"><ul>
+  <li>20 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Discuss how dynamic web pages work</li>
+      <li>Discuss common web programming languages</li>
+      <li>Discuss the role of a web server</li>
+      <li>Discuss common Java web servers</li>
+    </ul>
+  </li>
+</ul>
 </p>                        
 					
                     
-					
+					<hr />
+
+<h4 id="static-vs-dynamic-web-pages">Static vs. Dynamic Web Pages</h4>
+
+<p>So far, you’ve built “static” web pages by writing HTML to files.  Assuming you are finished with these files, you will always see the same thing when you open them - this is the definition of “static.”</p>
+
+<p>But the most interesting pages on the Internet are not static, they are “dynamic.”  Take an Amazon search results page, for example.  If you search for iPhone cases, you will see a web page with iPhone case information.  If you search for radios, you will see a web page with radio information.  Although the web page itself is the same file, it will <font color="orange">display differently depending on certain factors</font>, such as user input.  We call this a dynamic web page.</p>
+
+<hr />
+
+<h4 id="the-architecture-of-static-and-dynamic-web-pages">The Architecture of Static and Dynamic Web Pages</h4>
+
+<p>Static web pages can be very easy to build.  In fact, you’ve been building them with a text editor and then opening them directly with a web browser!  Static web pages are built directly with HTML, CSS, and JavaScript (you have not learned the last two!)</p>
+
+<p>A dynamic web page, however, often requires something called a back-end programming language.  This back-end language can create, edit, manipulate, or remove HTML, CSS, and JavaScript to change what a web page displays, as the page is actually being requested!</p>
+
+<p>The following can be used as back-end programming languages:</p>
+
+<ul>
+  <li>C#.NET</li>
+  <li>Java</li>
+  <li>Node.JS</li>
+  <li>Perl</li>
+  <li>PHP</li>
+  <li>Python</li>
+  <li>Ruby</li>
+</ul>
+
+<p>Obviously, we will use Java for this course!</p>
+
+<hr />
+
+<h4 id="a-high-level-example">A High-Level Example</h4>
+
+<p>A dynamic web page might include HTML and a bit of back-end Java together in the same file.  Notice that the Java code is written between &lt;% and %&gt;.</p>
+
+<pre><code class="language-jsp">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;% // this is a made up Java function, but go with it!
+       makeTenTextboxes();  %&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>When this page is called by a user, an application called a “web server” will execute the code on this page and return a final HTML file to the user:</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type="textbox" name="textbox1" /&gt;
+    &lt;input type="textbox" name="textbox2" /&gt;
+    &lt;input type="textbox" name="textbox3" /&gt;
+    &lt;input type="textbox" name="textbox4" /&gt;
+    &lt;input type="textbox" name="textbox5" /&gt;
+    &lt;input type="textbox" name="textbox6" /&gt;
+    &lt;input type="textbox" name="textbox7" /&gt;
+    &lt;input type="textbox" name="textbox8" /&gt;
+    &lt;input type="textbox" name="textbox9" /&gt;
+    &lt;input type="textbox" name="textbox10" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
+<p>It’s this type of technology that lets the Amazon search results page display iPhone items if you searched for iPhones, or radio items if you searched for radios.  You can use Java code to dynamically write HTML code when the page is requested!</p>
+
+<hr />
+
+<h4 id="web-servers">Web Servers</h4>
+
+<p>Going forward, we will need a web server to make dynamic web applications.  The web server is going to change how we open/locate our web pages.  We won’t write a simple text file any longer and then open it directly in a web browser.</p>
+
+<p>Instead, we will put our files inside the directory of a web server.  And we will view them by making a request through the web server’s address.</p>
+
+<p>When we set up a web server on your computer, we call that a local installation.  The name of your web server will almost certainly be “localhost” and you will view pages on it by visiting “http://localhost:8080/examplepagename.html”</p>
+
+<p>You will install a web server in your next lab and start to understand how this is all set up!</p>
+
+<hr />
+
+<h4 id="apache-tomcat">Apache Tomcat</h4>
+
+<p>You may be wondering: what’s a good web server to use for Java web applications?  How would I know this?  What if I choose to make applications in another language someday, what server would be good then?</p>
+
+<p>Typically, you’ll want to stick with the crowd on this sort of thing.</p>
+
+<p>1. Use Google to search for the the most common web servers for Java applications.</p>
+
+<p class="success">You should find that Apache Tomcat is the most common web server for Java applications, so that is what we will use in this course.</p>
+
+<hr />
+
+<h4 id="java">Java</h4>
+
+<p>In order for Apache to work with Java, we also need to install Java!</p>
+
+<p>There are two types of Java installations you will find: the Java Run-time Environment (JRE) and the Java Development Kit (JDK).</p>
+
+<p>Computers that only need to run Java applications can install the JRE.  But computers that need the ability to run and develop Java applications should install the JDK (which includes the JRE).  So we will install the Java JDK in this course.</p>
+
+<hr />
+
+<p class="success">That’s all for this lecture, see you in the lab!</p>
+
 
 				</section>
 
