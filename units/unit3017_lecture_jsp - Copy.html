@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lecture - Introduction to JSP - Java Camp</title>
+<meta property="og:title" content="Lecture - Introduction to JSP" />
+<meta name="description" content="  30 minutes  Learning Objectives          Learn JSP      Learn &lt;%= vs. &lt;%      Learn Strings      Learn Variables      Learn Numerics      " />
+<meta property="og:description" content="  30 minutes  Learning Objectives          Learn JSP      Learn &lt;%= vs. &lt;%      Learn Strings      Learn Variables      Learn Numerics      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3017_lecture_jsp%20-%20Copy.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3017_lecture_jsp%20-%20Copy.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-03T14:08:15-05:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lecture - Introduction to JSP",
+    "datePublished": "2016-11-03T14:08:15-05:00",
+    "description": "  30 minutes  Learning Objectives          Learn JSP      Learn &lt;%= vs. &lt;%      Learn Strings      Learn Variables      Learn Numerics      ",
+    "url": "http://localhost:4000/units/unit3017_lecture_jsp%20-%20Copy.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp%20-%20Copy.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_data_types.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_jsp%20-%20HARD.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lecture - Introduction to JSP</h3>
+					
+						<p class="description"><ul>
+  <li>30 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Learn JSP</li>
+      <li>Learn &lt;%= vs. &lt;%</li>
+      <li>Learn Strings</li>
+      <li>Learn Variables</li>
+      <li>Learn Numerics</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="java-servlet-page-jsp">Java Servlet Page (JSP)</h4>
+<p>A JSP is a HTML file that contains blocks of Java code within it.  The Java code is executed when the page is requested and can change the final HTML output that is delivered to a web browser.  This is what makes JSP a dynamic web page.</p>
+
+<hr />
+
+<h4 id="hello-world">Hello World!</h4>
+<p>In the lab to test your Apache Tomcat installation, you learned that the Apache ROOT folder is where your web files will need to go.</p>
+
+<p>You also created your first Hello World JSP file and named it index.jsp and placed it a ROOT\test folder.  Let’s make one more!</p>
+
+<p>1.  Start up Apache Tomcat.</p>
+
+<p>Open a command line or terminal window and start your Apache Tomcat server.</p>
+
+<p class="info">On Windows, you should be able to do this by typing ‘startup.bat’</p>
+
+<p class="info">On Mac, you should be able to do this by typing ‘sh startup.sh’</p>
+
+<p>2.  Create a new file in your Apache ROOT\test folder named ‘hello_world.jsp’.</p>
+
+<p>3.  Use the following code for your hello_world.jsp file.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%= "<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World!" %&gt;
+    <span class="err">&lt;</span>% out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World 2!"); %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>4.  Remember that your Apache is hosting web files at http://localhost:8080 .  What should the web address of this Hello World file be?</p>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Answer' tab to see the correct web address.
+</code></pre>
+</div>
+
+<div title="Answer" class="language-text highlighter-rouge"><pre class="highlight"><code>It should be http://localhost:8080/test/hello_world.jsp
+</code></pre>
+</div>
+
+<p>5.  Visit your Hello World page and examine the output.</p>
+
+<p class="success">Notice that the webpage was able to process the HTML <b></b> tag with no trouble.</p>
+
+<p>6.  Right click on the web page and choose ‘View Page Source’.  You can use this feature to look at the final HTML that was delivered to the web browser.</p>
+
+<p>Both lines of Java code printed similar Hello World text.  The first line used a &lt;%= opening tag. Notice the equal sign!  When you use an equal sign, you are saying that you want some text inserted into the HTML page.</p>
+
+<p>When you use the &lt;% without the equal sign, you can use multiple lines of Java to do something, which will eventually allow you to write much more complex code.</p>
+
+<p>7.  Let’s quickly change your code to the following:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%= "<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World!" %&gt;
+    <span class="err">&lt;</span>% 
+        out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World 2!"); 
+        out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World 3!"); 
+        out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World 4!"); 
+        out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World 5!"); 
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Notice that we could put multiple lines of Java inside one group of &lt;% %&gt; tags.</p>
+
+<hr />
+
+<h4 id="strings">Strings</h4>
+
+<p>In the world of programming, any kind of text value is generally referred to as a string.  You can think of this as a string of individual text characters.</p>
+
+<p>Whenever we use string text in Java, it needs to be wrapped in double quotation marks (this one: “).</p>
+
+<p>8.  Remove the quotations from the following line in your JSP page and see what happens when you refresh the page.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%= <span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span> World! %&gt; <span class="c">&lt;!-- no more double quotations here! --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">You should get a compile error.  The web server is unable to process the Java in this web page.</p>
+
+<p>9.  Multiple individual strings can be added together by using a + operator.  Try the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%= "<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span>" + " " + "World!" %&gt; <span class="c">&lt;!-- add strings together with a + operator --&gt;</span>
+    <span class="err">&lt;</span>% out.println("<span class="nt">&lt;b&gt;</span>Hello<span class="nt">&lt;/b&gt;</span>" + " " + "World 2!"); %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="semicolons">Semicolons</h4>
+
+<p>So what were those semicolons about?</p>
+
+<p>HTML is largely a language that says “this is how a web page should look.”  By contrast, Java is a language we’ll use to run multiple steps in a particular sequence.</p>
+
+<p>If you like analogies, we can think of baking a cake.  HTML is sort of like the beautiful picture of the finished cake.  Java is like the individual steps required to make the cake.</p>
+
+<p>When you see a recipe, it usually comes in specific steps.</p>
+
+<p>1.  Preheat the oven<br />
+2.  Grab a bowl<br />
+3.  Crack some eggs into the bowl.</p>
+
+<p>In Java, each step that needs to run is separated by a semicolon:</p>
+
+<p>Preheat the oven;<br />
+Grab a bowl;<br />
+Crack some eggs into the bowl;</p>
+
+<hr />
+
+<h4 id="variables">Variables</h4>
+
+<p>Remember Algebra class?  How we would write things like x = 7.  Well in Java (and many other languages), we can do a similar thing.</p>
+
+<p>10. Let’s make a String variable called myfirstvariable and set it equal to “Hello World!”.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+        String myfirstvariable = "Hello World!";
+        out.println(myfirstvariable); // don't use double quotes around a variable name!
+        out.println("myfirstvariable"); // see what happens if we do...
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>11.  Let’s make two String variables and add them together:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+        String variable1 = "Hello";
+        String variable2 = "World!";
+        out.println(variable1 + " " + variable2);
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="numbers">Numbers</h4>
+
+<p>In this lecture, we’ve talked about text called Strings.  But that is just one “data type” in Java.  We’ll often want to work with numbers too.</p>
+
+<p>There are a few different kinds of numeric data types.  These types often have nuanced characteristics.  Some can’t hold decimals well (1.78 for example), some can’t hold gigantic numbers (100,000,000,000,000 for example).</p>
+
+<p>Why are there different kinds at all?  These flavors of numeric data types often exist to manage how much computer memory a program will consume.  It takes more computer memory to store gigantic numbers than small ones, and more memory to store numbers with decimals than non-decimal numbers.  We won’t run into memory problems in this course, but this is a good thing to know!</p>
+
+<p>12.  Use Google.com to search for Java numeric data types.  See if you can identify a few of them.</p>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Answer' tab to see Java's numeric data types.
+</code></pre>
+</div>
+
+<div title="Answer" class="language-text highlighter-rouge"><pre class="highlight"><code>byte 1 byte -128 to -127.
+short 2 bytes -32,768 to 32,767.
+int 4 bytes -2,147,483,648 to 2,147,483,647.
+long 8 bytes -9,223,372,036,854,775,808 to 9,223,372,036,854,775,80.
+float 4 bytes 7 decimal digits.
+double 8 bytes 16 decimal digits.
+</code></pre>
+</div>
+
+<p>13.  Let’s write some code that uses numeric variables:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World JSP!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+        int number1 = 10; // no quote marks on numeric values!
+        int number2 = 1;
+        int total = number1 + number2;
+        
+        out.println(number1 + number2);
+        out.println("<span class="nt">&lt;br&gt;</span>");
+        out.println("the total is: " + number1 + number2);
+        out.println("<span class="nt">&lt;br&gt;</span>");
+        out.println("the total is: " + (number1 + number2));
+        out.println("<span class="nt">&lt;br&gt;</span>");
+        out.println("the total is: " + total);
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="challenge-question">Challenge Question</h4>
+
+<p>Of the four methods that the previous code example used, the second one did not work.</p>
+
+<p>Why do you think that is?</p>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Answer' tab to discover the issue.
+</code></pre>
+</div>
+
+<div title="Answer" class="language-text highlighter-rouge"><pre class="highlight"><code>When adding different data types together, in this case a String of "the total is: ", and numeric values of 10 and 1, Java wants to convert each variable that follows to a String.
+
+Java turned the 2nd example into "the total is: " + "10" + "1"
+
+The reason the 3rd example works is because Java processes (number1 + number2) first, and then it converts it to a String.  The parentheses helped Java to understand what to do first.
+</code></pre>
+</div>
+
+<hr />
+
+<p class="success">That’s all for this lecture, see you in the lab!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

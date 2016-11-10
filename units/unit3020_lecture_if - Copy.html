@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lecture - If Statements and Scope - Java Camp</title>
+<meta property="og:title" content="Lecture - If Statements and Scope" />
+<meta name="description" content="  30 minutes  Learning Objectives          Learn evaluating expressions      Learn if statements      Learn variable scope      " />
+<meta property="og:description" content="  30 minutes  Learning Objectives          Learn evaluating expressions      Learn if statements      Learn variable scope      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3020_lecture_if%20-%20Copy.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3020_lecture_if%20-%20Copy.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-07T09:48:41-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lecture - If Statements and Scope",
+    "datePublished": "2016-11-07T09:48:41-06:00",
+    "description": "  30 minutes  Learning Objectives          Learn evaluating expressions      Learn if statements      Learn variable scope      ",
+    "url": "http://localhost:4000/units/unit3020_lecture_if%20-%20Copy.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_data_types.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3020_lecture_if.html">Lecture - If Statements and Scope</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3020_lecture_if%20-%20Copy.html">Lecture - If Statements and Scope</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3021_lab_if.html">Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3022_debrief_if.html">Debrief Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3023_lunch.html">Lunch</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3024_quiz.html">Quiz - Java Basics</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3025_lecture_request_querystring.html">Lecture - Request Querystring</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3026_lab_jsp_form.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3027_debrief_jsp_form.html">Debrief Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3028_social_notional_career.html">Social Exercise - Programming Careers</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3029_career_day_in_the_life.html">Career Planning - Day in the Life</a>
+			</li>
+		
+		
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lecture - If Statements and Scope</h3>
+					
+						<p class="description"><ul>
+  <li>30 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Learn evaluating expressions</li>
+      <li>Learn if statements</li>
+      <li>Learn variable scope</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="evaluating-numeric-expressions-in-java">Evaluating Numeric Expressions in Java</h4>
+
+<p>In order for us to use Java code that will run in just some cases, we will need to learn a combination of If statements and evaluating expressions.</p>
+
+<p>For example, if the temperature is less than 60 degrees, I’ll wear a sweater.  If the temperature is more than 80 degrees, I’ll wear shorts.</p>
+
+<p>1.  Lets create a file in our ROOT\test folder called if.jsp</p>
+
+<p>2.  Create the barebones HTML code for it, and then view the webpage in your browser.</p>
+
+<p>3.  Use the following code in your page and see what prints out:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">80</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="o">);</span>    
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">80</span> <span class="o">&lt;=</span> <span class="mi">60</span><span class="o">);</span>
+        
+    <span class="c1">// in Java, we test for numerical equality using two equal signs</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">80</span> <span class="o">==</span> <span class="mi">60</span><span class="o">);</span> 
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">You should see the results of our three expressions: true, false, and false.  Yes, 80 is greater than 60, it’s not less than or equal to 60, and it’s not equal to 60.</p>
+
+<hr />
+
+<p>4.  This also works with variables.  Let’s try the following code:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">80</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">60.0</span><span class="o">;</span>
+    
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">);</span>    
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">);</span>
+        
+    <span class="c1">// in Java, we test for numerical equality using two equal signs</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="o">);</span> 
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="evaluating-strings-in-java">Evaluating Strings in Java</h4>
+
+<p>When we want to evaluate whether two Strings are equal, however, we need to use slightly different code.  The underlying reason is because numeric data types are primitive data types in Java, and Strings are not.  Strings are actually a form of something called an Object, which is a very important concept you will learn later in this course.</p>
+
+<p>For now, you just need to know that you can evaluate Strings using the method below:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+    <span class="n">String</span> <span class="n">animal</span> <span class="o">=</span> <span class="s">"lion"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">kingOfTheJungle</span> <span class="o">=</span> <span class="s">"lion"</span><span class="o">;</span>    
+     
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">kingOfTheJungle</span><span class="o">));</span>        
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">kingOfTheJungle</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">animal</span><span class="o">));</span>        
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="if-statements-in-java">If Statements in Java</h4>
+
+<p>In programming, we often need to execute code in a certain condition.</p>
+
+<p>We use an ‘if’ statement and then a set of curly braces { }.  Any statements inside the { and }, immediately after an If statement will execute if the statement evaluates as true.</p>
+
+<p>5.  Try the following code:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="n">String</span> <span class="n">animal</span> <span class="o">=</span> <span class="s">"lion"</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"lion"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"ROAR!"</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">You should see a mighty roar!</p>
+
+<p>6.  What if the animal isn’t a lion?  Try the following code:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="n">String</span> <span class="n">animal</span> <span class="o">=</span> <span class="s">"mouse"</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"lion"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"ROAR!"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"mouse"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"eek!"</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="info">We can test for more conditions by using an ‘else if’ statement.</p>
+
+<p>7.  What if the animal is something we probably couldn’t predict?  Try this:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="n">String</span> <span class="n">animal</span> <span class="o">=</span> <span class="s">"a ridiculously tall Giraffe named Sam"</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"lion"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"ROAR!"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"mouse"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"eek!"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"whoa!"</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="info">If you need a catch-all clause in case you have no idea what else might come, or it really is a situation of lion or anything else at all, you can use an ‘else’ statement at the end of your if-block.</p>
+
+<p>8.  If statements can also test for multiple conditions using AND or OR type operators.  In Java, we use &amp;&amp; to signal an AND operator, and we use || to signal an OR operator.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="kt">boolean</span> <span class="n">isBig</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">isScary</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">animal</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">isBig</span> <span class="o">&amp;&amp;</span> <span class="n">isScary</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">animal</span> <span class="o">=</span> <span class="s">"lion"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">isBig</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="n">isScary</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">animal</span> <span class="o">=</span> <span class="s">"panda bear"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">isScary</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">animal</span> <span class="o">=</span> <span class="s">"snake"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">animal</span> <span class="o">=</span> <span class="s">"butterfly"</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"lion"</span><span class="o">)</span> <span class="o">||</span> <span class="n">animal</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"snake"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Run away from a "</span> <span class="o">+</span> <span class="n">animal</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"I love this "</span> <span class="o">+</span> <span class="n">animal</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="challenge-question">Challenge Question</h4>
+
+<p>Try writing a series of if, else if, and else statements that will print the letter grade associated with a test score.</p>
+
+<p>Anything greater than or equal to a 90 should be an A.
+Anything greater than or equal to 80 and less than 90 should be a B.
+Anything greater than or equal to 70 and less than 80 should be a C.
+Anything greater than or equal to 60 and less than 70 should be a D.
+Anything less than 60 should be a F.</p>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Answer' tab after you've tried to complete this challenge!
+
+There are many possible variations, but this is just one solution.
+</code></pre>
+</div>
+
+<div title="Answer" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="kt">int</span> <span class="n">testScore</span> <span class="o">=</span> <span class="mi">82</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">testScore</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="o">)</span> <span class="o">{</span> 
+    <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">"A"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">testScore</span> <span class="o">&gt;=</span><span class="mi">80</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">"B"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">testScore</span> <span class="o">&gt;=</span><span class="mi">70</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">"C"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">testScore</span> <span class="o">&gt;=</span><span class="mi">60</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">"D"</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">letterGrade</span> <span class="o">=</span> <span class="s">"F"</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A test score of "</span> <span class="o">+</span> <span class="n">testScore</span> <span class="o">+</span> <span class="s">" translates to a letter grade of "</span> <span class="o">+</span> <span class="n">letterGrade</span> <span class="o">+</span> <span class="s">"."</span><span class="o">);</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="variable-scope">Variable Scope</h4>
+
+<p>The last concept in this lecture is on a topic called Scope.  Scope is used to define the concept that variables don’t exist everywhere all the time.  They only exist within a certain scope of code.</p>
+
+<p>9.  Try this example to see what happens:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="kt">boolean</span> <span class="n">isTrue</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">isTrue</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">scopeExample</span> <span class="o">=</span> <span class="s">"watch this"</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">scopeExample</span><span class="o">);</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="warning">You should get an error that says “scopeExample cannot be resolved to a variable.”  Since scopeExample was declared inside a set of { } braces, and so it isn’t accessible outside of them.</p>
+
+<hr />
+
+<p>10.  Now, try this example to see what happens:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="kt">boolean</span> <span class="n">isTrue</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">isTrue</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">scopeExample</span> <span class="o">=</span> <span class="s">"watch this"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">isTrue</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">scopeExample</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="o">%&gt;</span>
+</code></pre>
+</div>
+
+<p class="success">This example works because scopeExample was declared at a higher level than it’s being used.  It was already declared before a statement inside of a nested { } referenced it.</p>
+
+<hr />
+
+<h4 id="challenge-question-1">Challenge Question</h4>
+
+<p>Which of the following variables are being referenced out of scope?</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;%</span>
+<span class="kt">boolean</span> <span class="n">isTrue</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">apple</span> <span class="o">=</span> <span class="s">"apple"</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">isTrue</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">cherry</span> <span class="o">=</span> <span class="s">"cherry"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">isTrue</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">grape</span> <span class="o">=</span> <span class="s">"grape"</span><span class="o">;</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cherry</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">grape</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+<span class="o">%&gt;</span>
+
+</code></pre>
+</div>
+<div>&nbsp;</div>
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Answer' tab after you've tried to complete this challenge!
+</code></pre>
+</div>
+
+<div title="Answer" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Grape</span> <span class="n">is</span> <span class="n">the</span> <span class="n">only</span> <span class="n">variable</span> <span class="n">that</span> <span class="n">is</span> <span class="n">referenced</span> <span class="n">out</span> <span class="n">of</span> <span class="n">scope</span><span class="o">.</span>  <span class="n">It</span> <span class="n">was</span> <span class="n">declared</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">most</span> <span class="n">nested</span> <span class="n">set</span> <span class="n">of</span> <span class="o">{</span> <span class="o">},</span> <span class="n">and</span> <span class="n">then</span> <span class="n">referenced</span> <span class="n">outside</span> <span class="n">of</span> <span class="n">them</span><span class="o">.</span> 
+
+<span class="n">Both</span> <span class="n">apple</span> <span class="n">and</span> <span class="n">cherry</span> <span class="n">variables</span> <span class="n">are</span> <span class="n">declared</span> <span class="n">outside</span> <span class="n">of</span> <span class="o">{</span> <span class="o">}</span> <span class="n">tags</span> <span class="n">that</span> <span class="n">they</span> <span class="n">were</span> <span class="n">referenced</span> <span class="n">inside</span> <span class="n">of</span> <span class="o">-</span> <span class="n">which</span> <span class="n">is</span> <span class="n">totally</span> <span class="n">fine</span><span class="o">!</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p class="success">That’s all for this lecture, see you in the lab!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

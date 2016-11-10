@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lecture - Errors - Java Camp</title>
+<meta property="og:title" content="Lecture - Errors" />
+<meta name="description" content="  20 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      " />
+<meta property="og:description" content="  20 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3302_lecture_errors.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3302_lecture_errors.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lecture - Errors",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  20 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      ",
+    "url": "http://localhost:4000/units/unit3302_lecture_errors.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day13.html">Day 13 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3301_welcome.html">Welcome to Day 13!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3302_lecture_errors.html">Lecture - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3303_lab_errors.html">Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3304_debrief_errors.html">Debrief Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3305_methods.html">Lecture - Methods</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lecture - Errors</h3>
+					
+						<p class="description"><ul>
+  <li>20 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Learn why error handling is important</li>
+      <li>Learn major classes of errors</li>
+      <li>Learn try catch blocks</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="all-programmers-make-errors">All Programmers Make Errors</h4>
+
+<p>Even the very best programmers write programs with errors.  Part of what makes a programmer great is the ability to quickly find, fix, prevent, and gracefully handle errors.</p>
+
+<p>Some interesting facts about programming errors from the Internet:</p>
+
+<ul>
+  <li>Estimated that 50-90% of programmers’ time is spent debugging code</li>
+  <li>A typical programmer write 70 bugs per 1,000 lines of code</li>
+  <li>Fixing a bug takes 30 times longer than writing a line of code</li>
+</ul>
+
+<p>So if you have already encountered some level of frustration with errors, you’re not alone!</p>
+
+<p>If we can get better at dealing with them, we can spend more of our time dreaming up new ideas and writing the code to bring them into life.</p>
+
+<hr />
+
+<h4 id="major-error-classes-syntax-error">Major Error Classes: Syntax Error</h4>
+
+<p>The easiest type of error to describe is a syntax error.  This is usually the result of a typo, incorrect capitalization, or missing semicolon.</p>
+
+<p>For example, take a look at this code:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">// this line is fine</span>
+<span class="n">String</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"test"</span><span class="o">;</span>
+
+<span class="c1">// this line is not okay, string should be String</span>
+<span class="n">string</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"test"</span><span class="o">;</span>
+
+<span class="c1">// these lines are not okay, missing ;</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test"</span><span class="o">)</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test2"</span><span class="o">)</span>
+</code></pre>
+</div>
+
+<p>If you’re fortunate, you’ll have an error display that will give you the error and a line number to track the exact origin of the error.</p>
+
+<p align="center"><img src="../images/jsp/errors/syntax_error.png" /></p>
+
+<p class="info">Each of these syntax errors will stop Java during any compilation of the code.  Compilation means that Java is trying to turn your code into a working executable file.  There can’t be a single syntax error for successful compilation.</p>
+
+<p class="info">As we progress in this course, we will eventually stop using a simple text editor and move-into a development environment that can assist with highlighting syntax errors.</p>
+
+<hr />
+
+<h4 id="challenge-question">Challenge Question</h4>
+
+<p>Why doesn’t a HTML error cause a page crash, but a Java error will?</p>
+
+<p>For example, why doesn’t this code crash a page?</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>I have no closing tag
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>The answer is that HTML is not a compiled language, in fact, it’s not even a programming language.  HTML is a protocol: a standard language to transfer information over the Internet.  But, HTML is not compiled into an executable “program” to run on your computer.  It is processed by a web browser for display.</p>
+
+<p class="info">Java, on the other hand, is a compiled language.  Java programs are compiled into byte-code, which is a platform independent version of machine code.  The target machine is the Java Virtual Machine, and not the underlying architecture.</p>
+
+<hr />
+
+<h4 id="major-error-classes-logical-or-semantic-errors">Major Error Classes: Logical or Semantic Errors</h4>
+
+<p>A logical error can take on many forms, but basically your code may run without a compile error, yet still fail to produce the intended result.</p>
+
+<p>For example,</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="k">if</span> <span class="o">(</span><span class="n">weather</span><span class="o">==</span><span class="s">"dry"</span><span class="o">)</span> <span class="o">{</span><span class="kt">boolean</span> <span class="n">putOnRaincoat</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;}</span> <span class="c1">// should be false;</span>
+</code></pre>
+</div>
+
+<p>or</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">// calculating 3 pieces of pizza for 10 people plus 5 backup slices</span>
+<span class="kt">int</span> <span class="n">totalPizzaSlices</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="o">;</span> <span class="c1">//should be 3 * 10 + 5, or even better (3*10)+5</span>
+</code></pre>
+</div>
+
+<p>These errors can be extremely difficult to find because nothing breaks!  Your program will just quietly produce incorrect results.</p>
+
+<p>The best ways to manage these errors:<br />
+* Review your code thoroughly
+* Test your code with many ‘cases!’  When we did the money change lab, we tried several different cases at the end to see how our code would run.</p>
+
+<hr />
+
+<h4 id="major-error-classes-run-time-errors">Major Error Classes: Run-time Errors</h4>
+
+<p>Run-time errors, by definition, occur while the program is being used (execution), and not when the program is built (compilation).</p>
+
+<p>Often times, run-time errors occur because of the unexpected.  Bad user data and suddenly missing or corrupt file are examples of potential causes.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="n">String</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"14"</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// should be fine</span>
+
+<span class="c1">//what if x somehow became set to something non-numeric?</span>
+<span class="n">String</span> <span class="n">x</span> <span class="o">=</span><span class="s">"14x"</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// run-time error</span>
+</code></pre>
+</div>
+
+<p align="center"><img src="../images/jsp/errors/runtime_error.png" /></p>
+
+<p class="info">We can locate and gracefully handle run-time errors using error-catching syntax called try-catch blocks.</p>
+
+<hr />
+
+<h4 id="try-catch-blocks">Try-Catch Blocks</h4>
+
+<p>In many programming languages, we can use the concept of a try-catch block to attempt some lines of code.  If the code does create an error, we will have the program jump down to a new section of code, the catch block, to identify the error and figure out what to do next.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"14x"</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// run-time error</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"this won't print, the program will jump down to the catch block"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"ERROR!!!!"</span> <span class="o">+</span> <span class="s">"&lt;br&gt;"</span><span class="o">);</span>
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>        
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>You may also use a try-catch-finally block if you need to ensure some code runs at the end of your block, whether an error occurs or not.  Opening a file, and then making sure that you close it, is a good example.</p>
+
+<p>1.  Use the code below, play with the variable x.  Set it to “14” and then back to “14x”.  See how the page runs.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Errors<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+    try {
+        String x = "14x";
+        int i = Integer.parseInt(x); // run-time error
+        out.println("this won't print, the program will jump down to the catch block");
+    } catch (Exception e) {
+        out.println("ERROR!!!!" + "<span class="nt">&lt;br&gt;</span>");
+        out.println(e.getMessage());        
+    } finally {
+        out.println("this prints whether there is an error or not");
+    }
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p class="success">That’s all for this lecture, see you in the lab!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

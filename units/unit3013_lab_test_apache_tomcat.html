@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lab - Test Apache Tomcat - Java Camp</title>
+<meta property="og:title" content="Lab - Test Apache Tomcat" />
+<meta name="description" content="  20 minutes          Hello World HTML file      Welcome File      Subfolders      404 Error      Hello World JSP file      " />
+<meta property="og:description" content="  20 minutes          Hello World HTML file      Welcome File      Subfolders      404 Error      Hello World JSP file      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3013_lab_test_apache_tomcat.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3013_lab_test_apache_tomcat.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lab - Test Apache Tomcat",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  20 minutes          Hello World HTML file      Welcome File      Subfolders      404 Error      Hello World JSP file      ",
+    "url": "http://localhost:4000/units/unit3013_lab_test_apache_tomcat.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day11.html">Day 11 Material</a></h6>
+		<ul>
+		
+		
+		
+			<li>
+				<a href="/units/unit3001_welcome.html">Welcome to Camp</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3002_lecture_html.html">Lecture - Introduction to HTML</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3003_lab_html.html">Lab - HTML Page</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3004_debrief_html.html">Debrief Lab - HTML Page</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3005_lunch.html">Lunch</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3006_quiz_html.html">Quiz - HTML</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3007_lecture_html_forms.html">Lecture - HTML Forms</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3008_lab_html_forms.html">Lab - HTML Forms</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3009_debrief_html_forms.html">Debrief Lab - HTML Forms</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3010_social_web_page.html">Social Exercise - Web Pages</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3011_lecture_web_server.html">Lecture - Web Server</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3012_lab_install_apache_tomcat.html">Lab - Install Java JDK and Apache Tomcat</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3013_lab_test_apache_tomcat.html">Lab - Test Apache Tomcat</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3014_quiz_html_forms.html">Quiz - HTML Forms</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3015_career_planning.html">Career Planning</a>
+			</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lab - Test Apache Tomcat</h3>
+					
+						<p class="description"><ul>
+  <li>20 minutes
+    <ul>
+      <li>Hello World HTML file</li>
+      <li>Welcome File</li>
+      <li>Subfolders</li>
+      <li>404 Error</li>
+      <li>Hello World JSP file</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="start-the-web-server">Start the Web Server</h4>
+
+<p>1. Use the command line (cmd on Windows) or terminal (terminal on Mac OSX) to navigate to the ‘bin’ folder in apache\apache-tomcat-8.X.X.</p>
+
+<p class="info">Windows Hint: Use the command cd to change directories, and dir to list what’s in the current directory</p>
+
+<p>2. To start the Apache Tomcat web server, run the startup.bat file (Windows) or sh startup.sh (Mac)</p>
+
+<p>3. Open a web browser and visit http://localhost:8080/</p>
+
+<p>You should see a web page that looks like the following:</p>
+
+<p align="center"><img src="../images/html/web_server/localhost_8080.png" /></p>
+
+<hr />
+
+<h4 id="find-the-welcome-file">Find the Welcome File</h4>
+
+<p>4.  Navigate to the apache\apache-tomcat-8\webapps\ROOT folder.</p>
+
+<p>This is the base directory of hosted web files on Apache Tomcat.  Any web page hosted by this server will need to live somewhere inside this ROOT folder.</p>
+
+<p>On most web servers, the default file that is returned when visiting a server’s address (http://localhost:8080/) is named something like ‘index’ or ‘default’, and it lives in the ROOT folder itself (and not a subfolder).</p>
+
+<p>5.  Locate the index file (index.jsp) and open it in a text editor.  Scroll up and down and take a look at its contents.</p>
+
+<p class="success">You should see a combination of HTML and Java Scriptlets (code contained inside of &lt;% and %&gt; tags)</p>
+
+<hr />
+
+<h4 id="make-a-new-welcome-file">Make a new Welcome File</h4>
+
+<p>6.  Create a new file called index.html that displays the sentence “This web server belongs to me now!” and save it in the ROOT folder.</p>
+
+<p>7.  Try visiting http://localhost:8080/ again.  What happened?</p>
+
+<p class="success">You should see your index.html page is served now, and not the index.jsp page!</p>
+
+<p>In the configuration file, C:\apache\apache-tomcat-8.X.X\conf\web.xml, there is a setting that specifies which index file gets served when there are more than one.  Default Apache Tomcat settings look first for index.html, then index.htm, then index.jsp.</p>
+
+<p align="center"><img src="../images/html/web_server/web_xml.png" /></p>
+<hr />
+
+<h4 id="subfolders-and-404s">Subfolders and 404s</h4>
+
+<p>8.  Inside the ROOT folder, make a new folder named ‘test’.</p>
+
+<p>9.  Try to visit http://localhost:8080/test .  What do you think will happen?</p>
+
+<p class="success">You should have received a “404” error which means a page could not be found.  The web server could not locate an index.html, index.htm, or index.jsp file inside the test folder.</p>
+
+<p>10.  Try to visit http://localhost:8080/test/fake.html</p>
+
+<p class="success">You should have received a “404” error which means a page could not be found.  The web server could not locate a fake.html file inside the test folder.</p>
+
+<p>11.  Try to visit http://google.com/fake.html .  What happens?</p>
+
+<p class="success">You should have received a “404” error which means a page could not be found.  Google’s web server could not locate a fake.html file inside the test folder.</p>
+
+<p>12. Create a new file called index.html that displays the sentence “This is the default file for the test subfolder!”.  Save it inside the ROOT/test folder.</p>
+
+<p>13.  Try to visit the new web page.  What should the web address URL be?</p>
+
+<p class="success">The address should be: http://localhost:8080/test or http://localhost:8080/test/index.html .  Try visiting both to see they are the same.</p>
+
+<hr />
+
+<h4 id="hello-world-jsp-file">Hello World JSP File</h4>
+
+<p>14.  Create a new file called index.jsp and place it in the ROOT/test folder.</p>
+
+<p>15.  Edit the file so the text contains the following:</p>
+
+<pre><code class="language-jsp">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Hello World JSP!&lt;/title&gt;
+&lt;body&gt;
+    This text is written in HTML.&lt;br&gt;
+    &lt;% out.println("This text is written in &lt;b&gt;Java!&lt;/b&gt;"); %&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>16. Visit http://localhost:8080/test to see your file.  Oops!  You are probably seeing something that says, “This is the default file…”  What do you need to do so that your index.jsp file is the default file for the test folder?</p>
+
+<hr />
+
+<p class="success">That’s all for this lab, see you in the next unit!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

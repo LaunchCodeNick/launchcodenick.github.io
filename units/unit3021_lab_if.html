@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lab - Variables and If Statements - Java Camp</title>
+<meta property="og:title" content="Lab - Variables and If Statements" />
+<meta name="description" content="  45 minutes  Individual Exercise  Lab Objectives          Work with variables      Work with strings, numbers, and booleans      Work with If statements      " />
+<meta property="og:description" content="  45 minutes  Individual Exercise  Lab Objectives          Work with variables      Work with strings, numbers, and booleans      Work with If statements      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3021_lab_if.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3021_lab_if.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lab - Variables and If Statements",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  45 minutes  Individual Exercise  Lab Objectives          Work with variables      Work with strings, numbers, and booleans      Work with If statements      ",
+    "url": "http://localhost:4000/units/unit3021_lab_if.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_data_types.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3020_lecture_if.html">Lecture - If Statements and Scope</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3021_lab_if.html">Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3022_debrief_if.html">Debrief Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3023_lunch.html">Lunch</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3024_quiz.html">Quiz - Java Basics</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3025_lecture_request_querystring.html">Lecture - Request Querystring</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3026_lab_jsp_form.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3027_debrief_jsp_form.html">Debrief Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3028_social_notional_career.html">Social Exercise - Programming Careers</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3029_career_day_in_the_life.html">Career Planning - Day in the Life</a>
+			</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lab - Variables and If Statements</h3>
+					
+						<p class="description"><ul>
+  <li>45 minutes</li>
+  <li>Individual Exercise</li>
+  <li>Lab Objectives
+    <ul>
+      <li>Work with variables</li>
+      <li>Work with strings, numbers, and booleans</li>
+      <li>Work with If statements</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="working-with-java-variables-and-if-statements">Working with Java Variables and If statements</h4>
+
+<p>In this lab, we’re going to do some work with variables and if statements to solve a numerical challenge.</p>
+
+<p>Your program needs to declare an integer variable called ‘pennies’ and set it equal to 798.</p>
+
+<p>Then, your program needs to calculate how to convert those pennies to a more efficient form of change in dollars and coins.  For example, 798 pennies should receive 7 dollars, 3 quarters, 2 dimes, 0 nickles, and 3 pennies of change.</p>
+
+<p>Although you should know this, here’s a reference table just in case:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Money</td>
+      <td>Equals this number of pennies</td>
+    </tr>
+    <tr>
+      <td>Dollars</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Quarters</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Dimes</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Nickles</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Pennies</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The final output of your program should not print a type of coin if the value is zero.  For example:</p>
+
+<div title="Correct Output" class="language-text highlighter-rouge"><pre class="highlight"><code>798 pennies should be converted to the following change:
+
+7 dollars
+3 quarters
+2 dimes
+3 pennies
+</code></pre>
+</div>
+
+<div title="Incorrect Output" class="language-text highlighter-rouge"><pre class="highlight"><code>798 pennies should be converted to the following change:
+
+7 dollars
+3 quarters
+2 dimes
+0 nickles
+3 pennies
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="lab-setup">Lab Setup</h4>
+
+<p>This lab will not contain multiple steps and checkpoints for you.  Instead, please work with a partner to think through this problem!</p>
+
+<p>You have learned all of the programming concepts necessary to complete this challenge.  It may be a good strategy to solve this on paper before you write any code.  How would you do this in real life without a computer?</p>
+
+<hr />
+
+<h4 id="one-hint">One Hint</h4>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>In case you are really struggling with this lab, at the 15-minute mark, you may take a look at this hint to see how to start your lab!
+</code></pre>
+</div>
+
+<div title="Hint" class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Data Type Lab<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+        int pennies = 798;  // the initial count of pennies              
+        int penniesRemaining = pennies; // how many pennies still need to be accounted for 
+        
+        int dollars = penniesRemaining / 100;
+        int penniesRemaining = penniesRemaining - (dollars * 100);        
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="lab-completion">Lab Completion</h4>
+
+<p>If you believe your lab is finished and correct, please try changing the penny count to the following numbers and see how your program works:</p>
+
+<p>512 pennies<br />
+100 pennies<br />
+27 pennies<br />
+1 penny<br />
+0 pennies<br />
+-45 pennies</p>
+
+<hr />
+
+<p class="success">Congratulations, we’re finished with this lab.  See you in the debrief!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

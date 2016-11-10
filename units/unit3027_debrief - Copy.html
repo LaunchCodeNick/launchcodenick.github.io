@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Debrief Lab - Variables and If Statements - Java Camp</title>
+<meta property="og:title" content="Debrief Lab - Variables and If Statements" />
+<meta name="description" content="  15 minutes  Class Debrief  Debrief Objectives          Q&amp;A from the lab      Algorithms      Unit Testing      Error Handling      " />
+<meta property="og:description" content="  15 minutes  Class Debrief  Debrief Objectives          Q&amp;A from the lab      Algorithms      Unit Testing      Error Handling      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3027_debrief%20-%20Copy.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3027_debrief%20-%20Copy.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-07T00:01:36-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Debrief Lab - Variables and If Statements",
+    "datePublished": "2016-11-07T00:01:36-06:00",
+    "description": "  15 minutes  Class Debrief  Debrief Objectives          Q&amp;A from the lab      Algorithms      Unit Testing      Error Handling      ",
+    "url": "http://localhost:4000/units/unit3027_debrief%20-%20Copy.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_data_types.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3020_lecture_if.html">Lecture - If Statements and Scope</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3021_lab_if.html">Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3022_debrief_if.html">Debrief Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3027_debrief%20-%20Copy.html">Debrief Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3023_lunch.html">Lunch</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3024_quiz.html">Quiz - Java Basics</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3025_lecture_request_querystring.html">Lecture - Request Querystring</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3026_lab_jsp_form.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Debrief Lab - Variables and If Statements</h3>
+					
+						<p class="description"><ul>
+  <li>15 minutes</li>
+  <li>Class Debrief</li>
+  <li>Debrief Objectives
+    <ul>
+      <li>Q&amp;A from the lab</li>
+      <li>Algorithms</li>
+      <li>Unit Testing</li>
+      <li>Error Handling</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="lab-solution">Lab Solution</h4>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Coins<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="err">&lt;</span>%
+    // this is just one possible solution
+    
+    int pennies = -798;
+    
+    int dollars = pennies / 100;
+    pennies = pennies - (dollars * 100);
+    
+    int quarters = pennies / 25;
+    pennies = pennies - (quarters * 25);
+    
+    int dimes = pennies / 10;
+    pennies = pennies - (dimes * 10);
+    
+    int nickles = pennies / 5;
+    pennies = pennies - (nickles * 5);
+    
+    out.println("Dollars: " + dollars);
+    out.println("Quarters: " + quarters);
+    out.println("Dimes: " + dimes);
+    out.println("Nickles: " + nickles);
+    out.println("Pennies: " + pennies);
+%&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="questions-and-answers">Questions and Answers</h4>
+
+<p>What questions or comments do you have about the coin lab?</p>
+
+<hr />
+
+<h4 id="algorithms">Algorithms</h4>
+
+<p>Sometimes,  in programming, we are asked to solve little puzzles that involve mathematical computations.</p>
+
+<p class="info">The step-by-step solution we use code to articulate is called an algorithm.</p>
+
+<p class="info">Many technical interviews for computer programming jobs will test you ability to solve algorithms because they are a true representation of the challenge that faces many programmers on a daily basis.</p>
+
+<p class="info">In this course, we will try to give you plenty of practice with algorithms.  You should expect the algorithms to get more difficult as we go.</p>
+
+<hr />
+
+<h4 id="unit-testing-and-error-handling">Unit Testing and Error Handling</h4>
+
+<p>What did you learn from testing more cases at the end of the lab?</p>
+
+<p class="info">Whenever we work with sections of code, particularly algorithms, it will be a good practice to think through examples of good and bad user inputs.  As we move through this course, you will learn to anticipate bad inputs and write code that gracefully handles them.  Anticipating errors and handling them is referred to as error handling (obviously!).</p>
+
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

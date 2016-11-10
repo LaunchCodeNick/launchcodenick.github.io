@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Debrief Lab - Errors - Java Camp</title>
+<meta property="og:title" content="Debrief Lab - Errors" />
+<meta name="description" content="  20 minutes  Class Debrief  Debrief Objectives          Solution walkthrough      Q&amp;A from the lab      " />
+<meta property="og:description" content="  20 minutes  Class Debrief  Debrief Objectives          Solution walkthrough      Q&amp;A from the lab      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3304_debrief_errors.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3304_debrief_errors.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Debrief Lab - Errors",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  20 minutes  Class Debrief  Debrief Objectives          Solution walkthrough      Q&amp;A from the lab      ",
+    "url": "http://localhost:4000/units/unit3304_debrief_errors.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day13.html">Day 13 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3301_welcome.html">Welcome to Day 13!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3302_lecture_errors.html">Lecture - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3303_lab_errors.html">Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3304_debrief_errors.html">Debrief Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3305_methods.html">Lecture - Methods</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Debrief Lab - Errors</h3>
+					
+						<p class="description"><ul>
+  <li>20 minutes</li>
+  <li>Class Debrief</li>
+  <li>Debrief Objectives
+    <ul>
+      <li>Solution walkthrough</li>
+      <li>Q&amp;A from the lab</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="one-lab-solution">One Lab Solution</h4>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Wedding Reception Calculator<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="err">&lt;</span>%    
+    int invitesA = 40;
+    int invitesB = 25;
+    int invitesTotal = invitesA + invitesB;
+    
+    double costPerTable = 10.00;
+    double costPerPlate = 20.00;
+    double costDecorationsTotal = 1000.00;
+    double costTablesTotal = 0;
+    double costFoodTotal = 0;
+    double costGrandTotal = 0;
+    
+    int seatsPerTable = 8;
+    int tablesTotal;
+    
+    // calculate number of tables
+    tablesTotal = invitesTotal / seatsPerTable; // integer math drops decimal
+    
+    try {
+        // we're going to round tables up 1 if there was a decimal for a partial tables
+        // one approach: use math test
+        if (tablesTotal * seatsPerTable != invitesTotal) {
+            tablesTotal = tablesTotal + 1;
+        }
+        
+        // a second approach: use the mod (%) operator
+        if (invitesTotal % seatsPerTable != 0){ // if there's a remainder, round up
+            tablesTotal = (invitesTotal / seatsPerTable) + 1;
+        } else {
+            tablesTotal = (invitesTotal / seatsPerTable);
+        }
+    } catch (Exception e) {
+       out.println("There is an error calculating the number of tables.");        
+    }
+    
+    try {
+        // calculate all my costs
+        costTablesTotal = costPerTable * tablesTotal;
+        costFoodTotal = costPerPlate * invitesTotal;
+        costGrandTotal = costTablesTotal + costFoodTotal + costDecorationsTotal;
+    } catch (Exception e) {
+        out.println("There is an error calculating costs.");
+    }
+    
+    try {
+        // display results
+        out.println("<span class="nt">&lt;h1&gt;</span>Wedding Reception Calculator<span class="nt">&lt;/h1&gt;</span>");    
+        out.println("Number of Wedding Reception Guests: " + invitesTotal + "<span class="nt">&lt;br&gt;</span>");
+        out.println("----------------------------------------------------" + "<span class="nt">&lt;br&gt;</span>");
+        out.println("Total Table Costs: $" + costTablesTotal + "<span class="nt">&lt;br&gt;</span>");
+        out.println("Total Food Costs: $" + costFoodTotal + "<span class="nt">&lt;br&gt;</span>");
+        out.println("Total Decoration Costs: $" + costDecorationsTotal + "<span class="nt">&lt;br&gt;</span>");
+        out.println("----------------------------------------------------" + "<span class="nt">&lt;br&gt;</span>");
+        out.println("Grand Total: $" + costGrandTotal);
+    } catch (Exception e) {
+        out.println("There is an error displaying results.");        
+    }
+%&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="multiple-try-catch-blocks">Multiple Try-Catch Blocks</h4>
+
+<p>Notice that the lab solution file uses multiple try-catch blocks that are grouped around logical sections: calculating tables, calculating costs, and displaying results.</p>
+
+<p class="info">It’s a good practice to use try-catch blocks around smaller sections of code that belong together.  Later in the course, you’ll also be exposed to anticipating specific kinds of errors.  Right now, we are catching Exception which is the most general catch-all kind of exception in Java, but there are many more specific kinds.</p>
+
+<hr />
+
+<h4 id="challenge-question">Challenge Question</h4>
+
+<p>If the first try-catch block errored, do you think it’s wise that the program continues on to calculate costs and display results?  How might you change the solution?</p>
+
+<div title="Cover" class="language-text highlighter-rouge"><pre class="highlight"><code>Click the 'Opinion' tab when you're ready to hear one perspective.
+</code></pre>
+</div>
+
+<div title="Opinion" class="language-text highlighter-rouge"><pre class="highlight"><code>There's no exactly right answer here, but it doesn't seem to make sense that the rest of the program should continue if a previous block errors.  There are some contrived ways to manage this with if statements and variables, but the cleaner way to approach is this is with multiple 'methods.'  We will learn about methods in the next lecture.
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="questions-and-answers">Questions and Answers</h4>
+
+<p>What questions or comments do you have about this lab?</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

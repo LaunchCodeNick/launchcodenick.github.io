@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lab - Java Data Types - Java Camp</title>
+<meta property="og:title" content="Lab - Java Data Types" />
+<meta name="description" content="  45 minutes  Individual Exercise  Lab Objectives          Work with numbers      Work with boolean      Work with Strings      Test numeric to String conversion      Test String to numeric conversion      " />
+<meta property="og:description" content="  45 minutes  Individual Exercise  Lab Objectives          Work with numbers      Work with boolean      Work with Strings      Test numeric to String conversion      Test String to numeric conversion      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3018_lab_data_types.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3018_lab_data_types.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lab - Java Data Types",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  45 minutes  Individual Exercise  Lab Objectives          Work with numbers      Work with boolean      Work with Strings      Test numeric to String conversion      Test String to numeric conversion      ",
+    "url": "http://localhost:4000/units/unit3018_lab_data_types.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_data_types.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3020_lecture_if.html">Lecture - If Statements and Scope</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3021_lab_if.html">Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3022_debrief_if.html">Debrief Lab - Variables and If Statements</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3023_lunch.html">Lunch</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3024_quiz.html">Quiz - Java Basics</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3025_lecture_request_querystring.html">Lecture - Request Querystring</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3026_lab_jsp_form.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3027_debrief_jsp_form.html">Debrief Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3028_social_notional_career.html">Social Exercise - Programming Careers</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3029_career_day_in_the_life.html">Career Planning - Day in the Life</a>
+			</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lab - Java Data Types</h3>
+					
+						<p class="description"><ul>
+  <li>45 minutes</li>
+  <li>Individual Exercise</li>
+  <li>Lab Objectives
+    <ul>
+      <li>Work with numbers</li>
+      <li>Work with boolean</li>
+      <li>Work with Strings</li>
+      <li>Test numeric to String conversion</li>
+      <li>Test String to numeric conversion</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="working-with-java-variables">Working with Java Variables</h4>
+
+<p>In this lab, we’re going to do some exercises to get comfortable working with numbers, Strings, and another data type called a boolean.</p>
+
+<hr />
+
+<h4 id="file-setup">File Setup</h4>
+
+<p>1. Inside your Apache ROOT folder, create a folder named test.</p>
+
+<p>2. Create a file in this test folder named data_types.jsp</p>
+
+<p>3. Use the following starter code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>Data Type Lab<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="err">&lt;</span>%
+        out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");
+        out.println("<span class="nt">&lt;br&gt;</span>");        
+    %&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>4.  Visit your web page to make sure it works!</p>
+
+<p class="info">You may need to start Apache Tomcat first.  The page url should be http://localhost:8080/test/data_types.jsp</p>
+
+<hr />
+
+<h4 id="numeric-data-integers">Numeric Data: Integers</h4>
+
+<p>Let’s start with one of Java’s most common numeric data types: the integer.</p>
+
+<p>Integers are whole numbers (no decimals) that can be positive or negative.</p>
+
+<p>For example, -1000,-475, 0, 1, 2, 200, 2000.</p>
+
+<p>We can declare an integer using the keyword ‘int’ and assign a value to it using one equal sign.</p>
+
+<p>Edit the Java portion of your web page to the following:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    int myvariablename = 0;
+    out.println (myvariablename);
+%&gt;
+</code></pre>
+</div>
+
+<p>5.  Refresh your page to see the output.</p>
+
+<p class="success">You should see a zero appear on your screen!</p>
+
+<p>6.  You can use many of the math operators you’d expect to work, and you can also use parenthesis to structure an order of operation.</p>
+
+<p>Try the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    int myvariablename1 = 0 + 1 + 2;
+    int myvariablename2 = 1 + 2 * 3;
+    int myvariablename3 = (1 + 2) * 3;
+    int myvariablename4 = 4 / 2;
+    out.println (myvariablename1); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename2); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename3); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename4); out.println("<span class="nt">&lt;br&gt;</span>");
+%&gt;
+</code></pre>
+</div>
+
+<p>7.  Remember that an integers do not have decimals.  What do you think will happen when we try something like 5 / 2?</p>
+
+<p>Try the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    int myvariablename1 = 5 / 2;
+    out.println (myvariablename1); 
+%&gt;
+</code></pre>
+</div>
+
+<p class="info">Be careful when dividing integers if the exact value matters to you.  If you do need the decimals, it may be wise to leverage another numeric data type such as a ‘double’.</p>
+
+<hr />
+
+<h4 id="numeric-data-types-doubles">Numeric Data Types: Doubles</h4>
+
+<p>A double is a data type that can hold a much larger number and ones with decimals.</p>
+
+<p>8.  Let’s use the following code and see some doubles in action:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    double myvariablename1 = 5 / 2; // this line will not yield 2.5
+    double myvariablename2 = 5.0 / 2.0;
+    double myvariablename3 = 3.0 * 3.0;
+    out.println (myvariablename1); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename2); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename3); out.println("<span class="nt">&lt;br&gt;</span>");
+%&gt;
+</code></pre>
+</div>
+
+<p class="info">Notice that even though we are using doubles, the numbers themselves must be written with a decimal to get operators such as division correct!</p>
+
+<hr />
+
+<h4 id="mixing-doubles-and-integers">Mixing Doubles and Integers</h4>
+
+<p>9.  Let’s test what will happen if you mix doubles and integers in the same calculation:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    double myvariablename1 = 5.0 / 2;
+    double myvariablename2 = 5 / 2.0;
+    double myvariablename3 = 3.0 * 3;
+    out.println (myvariablename1); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename2); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (myvariablename3); out.println("<span class="nt">&lt;br&gt;</span>");
+%&gt;
+</code></pre>
+</div>
+
+<p class="info">When mixing numeric data types, the code will generally use and resolve to the type that can include the other.  For example, an integer can’t represent a double of 0.5, but a double can represent any integer.  So when mixing the two, a double will be the outcome.</p>
+
+<hr />
+
+<h4 id="boolean-data-type">Boolean Data Type</h4>
+
+<p>Sometimes, all we need to store in a variable is whether something is true or false.  We call this a boolean.</p>
+
+<p>10.  Let’s see some booleans in action with the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    boolean isSmart = true;
+    boolean isRichLikeBillGates = false;    
+    out.println (isSmart); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (isRichLikeBillGates); out.println("<span class="nt">&lt;br&gt;</span>");
+%&gt;
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="strings">Strings</h4>
+
+<p>You’ve already been exposed to Strings in some of your Hello World examples.  A String is some amount of text we need to store, such as “Hello World!”  Strings are wrapped in double quotation marks.</p>
+
+<p>11.  Let’s see some strings in action with the + operator.  When we add strings together, we call that concatenation.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+    
+    String firstWord = "hello";
+    String secondWord = "world";
+    String allWords = firstWord + secondWord;
+    out.println (firstWord); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (secondWord); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (firstWord + secondWord); out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println (allWords); out.println("<span class="nt">&lt;br&gt;</span>");
+%&gt;
+</code></pre>
+</div>
+
+<p class="info">Don’t expect that Java will put a space between Strings that you add together!</p>
+
+<hr />
+
+<h4 id="converting-numbers-to-strings">Converting Numbers to Strings</h4>
+
+<p>12.  It’s not often that you’ll want to convert a number into a String.  Usually, this occurs when you want to print a number to the screen.</p>
+
+<p>If we try something like out.println(“this is a zero: “ + 0), it will work but what Java is really doing is converting the 0 to a String of “0” and adding them together.</p>
+
+<p>Use the following code to see an example:
+~~~ html
+&lt;%
+    out.println(“&lt;p&gt;This is our Data Type Lab!&lt;/p&gt;”);</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>out.println ("this is a zero: " + 0); 
+out.println ("this is a zero: " + 0 + 0 + 0 + 0 + 0);  %&gt; ~~~
+</code></pre>
+</div>
+
+<p>13.  You can force Java to do any sort of numeric calcuations before Java converts numbers into a string by using parentheses.</p>
+
+<p>Try this:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+        
+    out.println ("this is a zero: " + 0); 
+    out.println ("this is a zero: " + (0 + 0 + 0 + 0 + 0)); 
+%&gt;
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="converting-strings-to-numbers">Converting Strings to Numbers</h4>
+
+<p>What if you have to go the other way and convert a String to a number?  You may have to do that because user input might be captured as a String, but actually contains a number.</p>
+
+<p>14.  Try this code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+
+    String hamburgerQuantityText = "4";
+    int hamburgerQuantity = hamburgerQuantityText;
+    hamburgerQuantity = hamburgerQuantity * 2; // double my order!
+    
+    out.println ("I have this many hamburgers: " + hamburgerQuantity);     
+%&gt;
+</code></pre>
+</div>
+
+<p class="warning">You should get an error that says, “cannot convert from String to int.”</p>
+
+<p>We will need to use special commands in Java to convert numbers into Strings.</p>
+
+<p>15.  Try this code instead:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>%
+    out.println("<span class="nt">&lt;p&gt;</span>This is our Data Type Lab!<span class="nt">&lt;/p&gt;</span>");            
+
+    String hamburgerQuantityText = "4";
+    int hamburgerQuantity = Integer.parseInt(hamburgerQuantityText);
+    hamburgerQuantity = hamburgerQuantity * 2; // double my order!    
+    out.println ("I have this many hamburgers: " + hamburgerQuantity);    
+
+    String hamburgerPriceText = "4.95";
+    double hamburgerPrice = Double.parseDouble(hamburgerPriceText);
+    out.println (", each one costs me: " + hamburgerPrice + 
+                 ", unless I have a 10% coupon which would make them: " + 
+                 (0.90 * hamburgerPrice));    
+%&gt;
+</code></pre>
+</div>
+
+<p class="info">Integer.parseInt() and Double.parseDouble() are commands you may need in a later lab!</p>
+
+<hr />
+
+<p class="success">Congratulations, we’re finished with this lab.  See you in the debrief!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lab - JSP Shopping Cart - Java Camp</title>
+<meta property="og:title" content="Lab - JSP Shopping Cart" />
+<meta name="description" content="  60 minutes  Individual Exercise  Lab Objectives          Capture querystring parameters      Display querystring parameters      Calculate an order total      " />
+<meta property="og:description" content="  60 minutes  Individual Exercise  Lab Objectives          Capture querystring parameters      Display querystring parameters      Calculate an order total      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3018_lab_data_types%20-%20HARD.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3018_lab_data_types%20-%20HARD.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-03T14:06:15-05:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lab - JSP Shopping Cart",
+    "datePublished": "2016-11-03T14:06:15-05:00",
+    "description": "  60 minutes  Individual Exercise  Lab Objectives          Capture querystring parameters      Display querystring parameters      Calculate an order total      ",
+    "url": "http://localhost:4000/units/unit3018_lab_data_types%20-%20HARD.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day12.html">Day 12 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3016_welcome.html">Welcome to Day 12!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3017_lecture_jsp.html">Lecture - Introduction to JSP</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types.html">Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3019_debrief_jsp.html">Debrief Lab - Java Data Types</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3018_lab_data_types%20-%20HARD.html">Lab - JSP Shopping Cart</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lab - JSP Shopping Cart</h3>
+					
+						<p class="description"><ul>
+  <li>60 minutes</li>
+  <li>Individual Exercise</li>
+  <li>Lab Objectives
+    <ul>
+      <li>Capture querystring parameters</li>
+      <li>Display querystring parameters</li>
+      <li>Calculate an order total</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="your-first-jsp-lab">Your First JSP Lab</h4>
+
+<p>For this lab, we’re going to keep working with our Shopping Cart page and add an order total to the bottom.</p>
+
+<hr />
+
+<h4 id="file-setup">File Setup</h4>
+
+<p>1. Inside your Apache ROOT folder, create a folder called Cart (no spaces).</p>
+
+<p>2. Copy your cart.html page into your Cart folder.</p>
+
+<p>3. Rename cart.html to cart.jsp</p>
+
+<hr />
+
+<h4 id="capture-querystring-parameters">Capture Querystring Parameters</h4>
+
+<p>In JSP, we can use the following convention to retrieve querystring parameters:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>% String x = request.getParameter("parameter_name"); %&gt;
+</code></pre>
+</div>
+
+<p>It’s important to know that in Java, these commands are case-sensitive!  Upper and lowercase letters matter!</p>
+
+<p>This will NOT work:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="err">&lt;</span>% string x = REQUEST.GETParameter("parameter_name"); %&gt;
+</code></pre>
+</div>
+
+<p>4. Add some code at the bottom of your page to get values of some querystring parameters:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>Calculate Your Order
+<span class="nt">&lt;hr&gt;</span>
+<span class="err">&lt;</span>%
+    String hamburgerPrice = request.getParameter("hamburger_price");
+    String hamburgerQuantity = request.getParameter("hamburger_quantity");
+%&gt;
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>  
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>5.  Now, add some text to display the values of your variables:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>Calculate Your Order
+<span class="nt">&lt;hr&gt;</span>        
+<span class="err">&lt;</span>%
+    String hamburgerPrice = request.getParameter("hamburger_price");
+    String hamburgerQuantity = request.getParameter("hamburger_quantity");
+    
+    out.println("Hamburger Price: " + hamburgerPrice);
+    out.println("<span class="nt">&lt;br&gt;</span>");
+    out.println("Hamburger Quantity: " + hamburgerQuantity);
+    out.println("<span class="nt">&lt;br&gt;&lt;br&gt;</span>");
+%&gt;            
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>  
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>6.  Visit your page.  It should be at http://localhost:8080/cart/cart.jsp . What does your page say is the current hamburger price and quantity?</p>
+
+<p class="info">Your page says they are both ‘null’ (which means empty) if there are no values in the querystring!</p>
+
+<p>7.  Enter a value of 1 for the Hamburger quantity and then click the ‘Submit’ button.  What does your page say now?</p>
+
+<p class="success">Your page should say that the price is $4.95 and the quantity is 1.</p>
+
+<p>8.  Create variables for every input element on your form.  Display them at the bottom.</p>
+
+<hr />
+
+<h3 id="checkpoint-1">Checkpoint 1</h3>
+
+<div title="Checkpoint" class="language-html highlighter-rouge"><pre class="highlight"><code>Click the answer tab to see how your code stacks up.  
+
+There are many potential solutions, but this is ours!
+</code></pre>
+</div>
+<div title="Answer 1" class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Samburgers Shopping Cart<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">&gt;</span>    
+        <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;font</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Shopping Cart<span class="nt">&lt;/font&gt;&lt;br&gt;</span>
+            <span class="nt">&lt;br&gt;</span>
+            Price, Quantity, Item<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;hr&gt;</span>
+            <span class="c">&lt;!-- Hamburger line item --&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_price"</span> <span class="na">value=</span><span class="s">"$4.95"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+            Hamburger
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_cheese"</span><span class="nt">&gt;</span>Cheese (+$0.30)
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_sauce"</span><span class="nt">&gt;</span>Special Sauce (+$0.30)
+            <span class="nt">&lt;br&gt;</span>
+            <span class="c">&lt;!-- End of the Hamburger line item --&gt;</span>
+            <span class="c">&lt;!-- Fries line item --&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_price"</span> <span class="na">value=</span><span class="s">"$1.89"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+            Fries
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"regular"</span> <span class="na">checked</span> <span class="nt">/&gt;</span> Regular
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"cajun"</span> <span class="nt">/&gt;</span> Cajun
+            <span class="nt">&lt;br&gt;</span>            
+            <span class="c">&lt;!-- End of the Fries line item --&gt;</span>
+            <span class="c">&lt;!-- Soda line item --&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_price"</span> <span class="na">value=</span><span class="s">"$1.99"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+            Soda
+            <span class="nt">&lt;br&gt;</span>
+            <span class="c">&lt;!-- End of Soda line item --&gt;</span>
+            <span class="c">&lt;!-- Ice Cream line item --&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_price"</span> <span class="na">value=</span><span class="s">"$1.00"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+            Ice Cream
+            , Flavor  
+            <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"icecreamflavor"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"chocolate"</span><span class="nt">&gt;</span>Chocolate<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"strawberry"</span><span class="nt">&gt;</span>Strawberry<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"vanilla"</span><span class="nt">&gt;</span>Vanilla<span class="nt">&lt;/option&gt;</span>                
+            <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;br&gt;</span>
+            <span class="c">&lt;!-- End of Ice Cream line item --&gt;</span>
+            <span class="nt">&lt;br&gt;</span>            
+            Calculate Your Order
+            <span class="nt">&lt;hr&gt;</span>    
+            <span class="err">&lt;</span>%
+                String hamburgerPrice = request.getParameter("hamburger_price");
+                String hamburgerQuantity = request.getParameter("hamburger_quantity");
+                String hamburgerCheese = request.getParameter("hamburger_cheese");
+                String hamburgerSauce = request.getParameter("hamburger_sauce");
+                String friesPrice = request.getParameter("fries_price");
+                String friesQuantity = request.getParameter("fries_quantity");
+                String friesType = request.getParameter("fries_type");
+                String sodaPrice = request.getParameter("soda_price");
+                String sodaQuantity = request.getParameter("soda_quantity");
+                String icecreamPrice = request.getParameter("icecream_price");
+                String icecreamQuantity = request.getParameter("icecream_quantity");
+                String icecreamFlavor = request.getParameter("icecreamflavor");
+
+                out.println("Hamburger Price: " + hamburgerPrice + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("Hamburger Quantity: " + hamburgerQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Cheese: " + hamburgerCheese + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Sauce: " + hamburgerSauce + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Price: " + friesPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Quantity: " + friesQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Type: " + friesType + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Price: " + sodaPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Quantity: " + sodaQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Price: " + icecreamPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Quantity: " + icecreamQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Flavor: " + icecreamFlavor + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("<span class="nt">&lt;br&gt;</span>");                
+            %&gt;             
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>  
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/font&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Visual Checkpoint:</p>
+
+<p align="center"><img src="../../images/jsp/shopping_cart/cart_checkpoint_1.png" /></p>
+
+<hr />
+
+<h4 id="calculating-a-total">Calculating a Total</h4>
+
+<p>Our final objective with this lab is to calculate the total $$ amount of the order.</p>
+
+<p>In order to do that, we have to solve a few issues.  The first problem is that to add up $ amounts, we’d love to have our variables stored as numeric data types.  Unfortunately, our variables are currently stored as Strings because that’s what querystring values are.</p>
+
+<p>9.  Try changing one of your request.getParameter lines to the following, and then refresh your page:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>int hamburgerQuantity = request.getParameter("hamburger_quantity");
+</code></pre>
+</div>
+
+<p class="warning">You should get a compile error because Java won’t let you casually place a String text value into a numeric variable.</p>
+
+<p>10. You can ask Java to convert a String to a numeric type with special commands.  For a String to int conversion, use this:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>int hamburgerQuantity = Integer.parseInt(request.getParameter("hamburger_quantity"));
+</code></pre>
+</div>
+
+<p>Change all of your Quantity variables to int data types using Integer.parseInt.</p>
+
+<p>11. Try changing your hamburger price variable to the float data type (because it can handle decimals) using Float.parseFloat.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>float hamburgerPrice = Float.parseFloat(request.getParameter("hamburger_price"));
+</code></pre>
+</div>
+
+<p class="warning">You should receive an error.  Look at the error page and see if you can identify the “root cause”.  Java is saying it found an error, or exception, because of an input string “$4.95”.  As it turns out, we can’t convert “$4.95” to a numeric data type because it contains a dollar sign character!  However, we can convert “4.95” to a numeric data type.</p>
+
+<p>12.  Remove all of the dollar signs from your HTML input controls.  Try the code from line 11 again.</p>
+
+<p class="warning">Yikes, you might get another error!  Look at the error page again and see if you can identify the “root cause”.  This time the error is different, and you should see a NullPointerException.  Java can’t convert a null String into a numeric data type.  When we first visit the web page, there are no querystring parameters because we haven’t submitted the form yet.  We will need to add a little code to solve the problem.</p>
+
+<p>13.  We’re going to change our page so that we only try to store and calculate variables when the form has been submitted.</p>
+
+<p>The question now is: how can we figure out when the form has been submitted?  We’re going to add a name to our submit button and then check for it first with our Java code.</p>
+
+<p>Change your submit button code to the following:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>Now add an “if” statement that looks like the code below.  An “if” statement will only run the code inside the { } braces if the statement is true.  The != operator means “not equals.”  So the statement below is saying only run our code if the querystring parameter for “submit” is not null (meaning not empty or missing).</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>if (request.getParameter("submit") != null) {
+    float hamburgerPrice = Float.parseFloat(request.getParameter("hamburger_price"));
+    int hamburgerQuantity = Integer.parseInt(request.getParameter("hamburger_quantity"));
+    // put all the rest of your existing code here too, this is just a short code example!
+}
+</code></pre>
+</div>
+
+<p>14.  Convert all of your price variables to float data types, and convert all of your quantity variables to int data types.  Make sure to add null value checks!</p>
+
+<p>15.  Test your page.  Try changing some of the values and submitting the form a few times.</p>
+
+<hr />
+
+<h4 id="checkpoint-2">Checkpoint 2</h4>
+
+<div title="Checkpoint" class="language-html highlighter-rouge"><pre class="highlight"><code>Click the answer tab to see how your code stacks up.  
+
+There are many potential solutions, but this is ours!
+</code></pre>
+</div>
+<div title="Answer 2" class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Samburgers Shopping Cart<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">&gt;</span>    
+        <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;font</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Shopping Cart<span class="nt">&lt;/font&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+        Price, Quantity, Item<span class="nt">&lt;br&gt;</span>
+        <span class="nt">&lt;hr&gt;</span>
+        <span class="c">&lt;!-- Hamburger line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_price"</span> <span class="na">value=</span><span class="s">"4.95"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Hamburger
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_cheese"</span><span class="nt">&gt;</span>Cheese (+$0.30)
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_sauce"</span><span class="nt">&gt;</span>Special Sauce (+$0.30)
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of the Hamburger line item --&gt;</span>
+        <span class="c">&lt;!-- Fries line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_price"</span> <span class="na">value=</span><span class="s">"1.89"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Fries
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"regular"</span> <span class="na">checked</span> <span class="nt">/&gt;</span> Regular
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"cajun"</span> <span class="nt">/&gt;</span> Cajun
+        <span class="nt">&lt;br&gt;</span>            
+        <span class="c">&lt;!-- End of the Fries line item --&gt;</span>
+        <span class="c">&lt;!-- Soda line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_price"</span> <span class="na">value=</span><span class="s">"1.99"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Soda
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of Soda line item --&gt;</span>
+        <span class="c">&lt;!-- Ice Cream line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_price"</span> <span class="na">value=</span><span class="s">"1.00"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Ice Cream
+        , Flavor  
+        <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"icecreamflavor"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"chocolate"</span><span class="nt">&gt;</span>Chocolate<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"strawberry"</span><span class="nt">&gt;</span>Strawberry<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"vanilla"</span><span class="nt">&gt;</span>Vanilla<span class="nt">&lt;/option&gt;</span>                
+        <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of Ice Cream line item --&gt;</span>
+        <span class="nt">&lt;br&gt;</span>            
+        Calculate Your Order
+        <span class="nt">&lt;hr&gt;</span>    
+        <span class="err">&lt;</span>%
+            if (request.getParameter("submit") != null) {
+                float hamburgerPrice = Float.parseFloat(request.getParameter("hamburger_price"));
+                int hamburgerQuantity = Integer.parseInt(request.getParameter("hamburger_quantity"));
+                String hamburgerCheese = request.getParameter("hamburger_cheese");
+                String hamburgerSauce = request.getParameter("hamburger_sauce");
+                float friesPrice = Float.parseFloat(request.getParameter("fries_price"));
+                int friesQuantity = Integer.parseInt(request.getParameter("fries_quantity"));
+                String friesType = request.getParameter("fries_type");
+                float sodaPrice = Float.parseFloat(request.getParameter("soda_price"));
+                int sodaQuantity = Integer.parseInt(request.getParameter("soda_quantity"));
+                String icecreamPrice = request.getParameter("icecream_price");
+                int icecreamQuantity = Integer.parseInt(request.getParameter("icecream_quantity"));
+                String icecreamFlavor = request.getParameter("icecreamflavor");
+        
+                out.println("Hamburger Price: " + request.getParameter("submit") + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Price: " + hamburgerPrice + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("Hamburger Quantity: " + hamburgerQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Cheese: " + hamburgerCheese + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Sauce: " + hamburgerSauce + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Price: " + friesPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Quantity: " + friesQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Type: " + friesType + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Price: " + sodaPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Quantity: " + sodaQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Price: " + icecreamPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Quantity: " + icecreamQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Flavor: " + icecreamFlavor + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("<span class="nt">&lt;br&gt;</span>");
+            }                
+        %&gt;             
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>  
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/font&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Visual Checkpoint:</p>
+
+<p align="center"><img src="../../images/jsp/shopping_cart/cart_checkpoint_1.png" /></p>
+
+<hr />
+
+<h4 id="adding-everything-up">Adding everything up</h4>
+
+<p>Now that our numeric variables are in numeric data types, and we are error free, we’re ready to calculate the total.</p>
+
+<p>16.  Make a float variable named ‘total’ and set it equal to 0.</p>
+
+<p>17.  Let’s add the following code to get our final total:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>float total = 0;
+total = total + (hamburgerPrice * hamburgerQuantity);
+total = total + (friesPrice * friesQuantity);
+total = total + (sodaPrice * sodaQuantity);
+total = total + (icecreamPrice * icecreamQuantity);
+
+if (hamburgerQuantity &gt; 0) {
+    if (hamburgerCheese.equals("on")) {
+        total = total + 0.30f; // the f tells Java this is a float
+    }
+    if (hamburgerSauce.equals("on")) {
+        total = total + 0.30f; // the f tells Java this is a float
+    }
+}
+
+out.println("Order Total: $" + total + "<span class="nt">&lt;br&gt;</span>");                    
+out.println("<span class="nt">&lt;br&gt;</span>");
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="checkpoint-3">Checkpoint 3</h4>
+
+<div title="Checkpoint" class="language-html highlighter-rouge"><pre class="highlight"><code>Click the answer tab to see how your code stacks up.  
+
+There are many potential solutions, but this is ours!
+</code></pre>
+</div>
+<div title="Answer 3" class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Samburgers Shopping Cart<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">&gt;</span>    
+        <span class="nt">&lt;font</span> <span class="na">face=</span><span class="s">"Arial"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;font</span> <span class="na">size=</span><span class="s">"20"</span><span class="nt">&gt;</span>Shopping Cart<span class="nt">&lt;/font&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+        Price, Quantity, Item<span class="nt">&lt;br&gt;</span>
+        <span class="nt">&lt;hr&gt;</span>
+        <span class="c">&lt;!-- Hamburger line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_price"</span> <span class="na">value=</span><span class="s">"4.95"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"hamburger_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Hamburger
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_cheese"</span><span class="nt">&gt;</span>Cheese (+$0.30)
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"hamburger_sauce"</span><span class="nt">&gt;</span>Special Sauce (+$0.30)
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of the Hamburger line item --&gt;</span>
+        <span class="c">&lt;!-- Fries line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_price"</span> <span class="na">value=</span><span class="s">"1.89"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"fries_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Fries
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"regular"</span> <span class="na">checked</span> <span class="nt">/&gt;</span> Regular
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"fries_type"</span> <span class="na">value=</span><span class="s">"cajun"</span> <span class="nt">/&gt;</span> Cajun
+        <span class="nt">&lt;br&gt;</span>            
+        <span class="c">&lt;!-- End of the Fries line item --&gt;</span>
+        <span class="c">&lt;!-- Soda line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_price"</span> <span class="na">value=</span><span class="s">"1.99"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"soda_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Soda
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of Soda line item --&gt;</span>
+        <span class="c">&lt;!-- Ice Cream line item --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_price"</span> <span class="na">value=</span><span class="s">"1.00"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"icecream_quantity"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span> 
+        Ice Cream
+        , Flavor  
+        <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"icecreamflavor"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"chocolate"</span><span class="nt">&gt;</span>Chocolate<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"strawberry"</span><span class="nt">&gt;</span>Strawberry<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"vanilla"</span><span class="nt">&gt;</span>Vanilla<span class="nt">&lt;/option&gt;</span>                
+        <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+        <span class="c">&lt;!-- End of Ice Cream line item --&gt;</span>
+        <span class="nt">&lt;br&gt;</span>            
+        Calculate Your Order
+        <span class="nt">&lt;hr&gt;</span>    
+        <span class="err">&lt;</span>%
+            if (request.getParameter("submit") != null) {
+                float hamburgerPrice = Float.parseFloat(request.getParameter("hamburger_price"));
+                int hamburgerQuantity = Integer.parseInt(request.getParameter("hamburger_quantity"));
+                String hamburgerCheese = request.getParameter("hamburger_cheese");
+                String hamburgerSauce = request.getParameter("hamburger_sauce");
+                float friesPrice = Float.parseFloat(request.getParameter("fries_price"));
+                int friesQuantity = Integer.parseInt(request.getParameter("fries_quantity"));
+                String friesType = request.getParameter("fries_type");
+                float sodaPrice = Float.parseFloat(request.getParameter("soda_price"));
+                int sodaQuantity = Integer.parseInt(request.getParameter("soda_quantity"));
+                float icecreamPrice = Float.parseFloat(request.getParameter("icecream_price"));
+                int icecreamQuantity = Integer.parseInt(request.getParameter("icecream_quantity"));
+                String icecreamFlavor = request.getParameter("icecreamflavor");
+                           
+                out.println("Hamburger Price: " + hamburgerPrice + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("Hamburger Quantity: " + hamburgerQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Cheese: " + hamburgerCheese + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Hamburger Sauce: " + hamburgerSauce + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Price: " + friesPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Quantity: " + friesQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Fries Type: " + friesType + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Price: " + sodaPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Soda Quantity: " + sodaQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Price: " + icecreamPrice + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Quantity: " + icecreamQuantity + "<span class="nt">&lt;br&gt;</span>");
+                out.println("Ice Cream Flavor: " + icecreamFlavor + "<span class="nt">&lt;br&gt;</span>");                
+                out.println("<span class="nt">&lt;br&gt;</span>");
+                
+                float total = 0;
+                total = total + (hamburgerPrice * hamburgerQuantity);
+                total = total + (friesPrice * friesQuantity);
+                total = total + (sodaPrice * sodaQuantity);
+                total = total + (icecreamPrice * icecreamQuantity);
+
+                if (hamburgerQuantity &gt; 0) {
+                    if (hamburgerCheese.equals("on")) {
+                        total = total + 0.30f; // the f tells Java this is a float
+                    }
+                    if (hamburgerSauce.equals("on")) {
+                        total = total + 0.30f; // the f tells Java this is a float
+                    }
+                }
+
+                out.println("Order Total: $" + total + "<span class="nt">&lt;br&gt;</span>");                    
+                out.println("<span class="nt">&lt;br&gt;</span>");
+            }                
+        %&gt;             
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>  
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/font&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Visual Checkpoint:</p>
+
+<p align="center"><img src="../../images/jsp/shopping_cart/cart_checkpoint_3.png" /></p>
+
+<hr />
+
+<p class="success">Congratulations, we’re finished with this lab.  See you in the debrief!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

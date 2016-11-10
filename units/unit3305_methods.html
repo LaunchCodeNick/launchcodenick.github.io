@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lecture - Methods - Java Camp</title>
+<meta property="og:title" content="Lecture - Methods" />
+<meta name="description" content="  30 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      " />
+<meta property="og:description" content="  30 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3305_methods.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3305_methods.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lecture - Methods",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  30 minutes  Learning Objectives          Learn why error handling is important      Learn major classes of errors      Learn try catch blocks      ",
+    "url": "http://localhost:4000/units/unit3305_methods.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day13.html">Day 13 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3301_welcome.html">Welcome to Day 13!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3302_lecture_errors.html">Lecture - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3303_lab_errors.html">Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3304_debrief_errors.html">Debrief Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3305_methods.html">Lecture - Methods</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lecture - Methods</h3>
+					
+						<p class="description"><ul>
+  <li>30 minutes</li>
+  <li>Learning Objectives
+    <ul>
+      <li>Learn why error handling is important</li>
+      <li>Learn major classes of errors</li>
+      <li>Learn try catch blocks</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="java-methods">Java Methods</h4>
+
+<p>In programming, a <font color="orange">method</font> is a block of code that logically belongs together.  We often use methods because we find ourselves using the same kind of code repeatedly.  Rather than write copies of code all over our program, we can write 1 flexible version of those copies, and then call, or use, that single block of code many times.</p>
+
+<p>Many Java methods perform some steps and then return a value. Look at the following skeleton of a Java method:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">returnType</span> <span class="nf">methodName</span><span class="o">(</span><span class="n">inputParameter1Type</span> <span class="n">inputParameter1Name</span><span class="o">,</span> <span class="n">inputParameter2Type</span> <span class="n">inputParameter2Name</span><span class="o">,</span> <span class="o">...)</span> <span class="o">{</span>
+    <span class="c1">// some lines of code</span>
+    <span class="c1">// some more lines of code</span>
+    <span class="k">return</span> <span class="n">returnType</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Look at this working implementation of this method skeleton:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">calculateTotalCost</span><span class="o">(</span><span class="kt">int</span> <span class="n">numberOfItems</span><span class="o">,</span> <span class="kt">double</span> <span class="n">costPerItem</span><span class="o">,</span> <span class="kt">double</span> <span class="n">salesTaxPercent</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">double</span> <span class="n">totalCost</span> <span class="o">=</span> <span class="n">numberOfItems</span> <span class="o">*</span> <span class="n">costPerItem</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span><span class="o">+</span><span class="n">salesTax</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">totalCost</span><span class="o">;</span>  <span class="c1">// the variable being returned must match the returnType of the method</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>We are saying we have a block of code called ‘calculateTotalCost’ that requires 3 input parameters to do its job.  It needs an integer that represents some number of items, a double that represents the cost per item, and a double that represents the sales tax percent.</p>
+
+<p>If you give this method those 3 items, it will give you something back.  It will give you a double (the first word in the method declaration here) that represents the total cost calculated.</p>
+
+<hr />
+
+<h4 id="questions">Questions?</h4>
+
+<p>Let’s intentionally pause here to see if anyone has any questions.</p>
+
+<hr />
+
+<h4 id="calling-a-method">Calling a Method</h4>
+
+<p>And here is how we would call, or use, that method in our program:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="n">salesTax</span> <span class="o">=</span> <span class="mf">0.07</span><span class="o">;</span>
+
+<span class="kt">int</span> <span class="n">numberOfTables</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">costPerTable</span> <span class="o">=</span> <span class="mf">20.00</span><span class="o">;</span>
+
+<span class="kt">int</span> <span class="n">numberOfGuests</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">costPerDinner</span> <span class="o">=</span> <span class="mf">25.00</span><span class="o">;</span>
+
+<span class="c1">// use the calculateTotalCost method - example #1</span>
+<span class="kt">double</span> <span class="n">totalTableCost</span> <span class="o">=</span> <span class="n">calculateTotalCost</span><span class="o">(</span><span class="n">numberOfTables</span><span class="o">,</span> <span class="n">costPerTable</span><span class="o">,</span> <span class="n">salesTax</span><span class="o">);</span> <span class="c1">// use #1</span>
+
+<span class="c1">// use the calculateTotalCost method - example #2</span>
+<span class="c1">// don't always have to use variables, can pass direct values as well</span>
+<span class="kt">double</span> <span class="n">totalDinnerCost</span> <span class="o">=</span> <span class="n">calculateTotalCost</span><span class="o">(</span><span class="n">numberOfGuests</span><span class="o">,</span> <span class="n">costPerDinner</span><span class="o">,</span> <span class="mf">0.07</span><span class="o">);</span> 
+
+<span class="c1">// output examples</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">totalTableCost</span><span class="o">);</span> 
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculateTotalCost</span><span class="o">(</span><span class="n">numberOfTables</span><span class="o">,</span> <span class="n">costPerTable</span><span class="o">,</span> <span class="n">salesTax</span><span class="o">));</span>
+</code></pre>
+</div>
+
+<p class="info">In this example, we are calling the method twice.  Once to calculate a total cost for tables, and once to calculate the total cost for dinner.  You may be wondering, why are we using a method?  The calculation seems pretty simple.  Eventually, your calculations will become so complex that anything but a method will create extremely long code that is difficult to maintain.</p>
+
+<p class="info">Notice that the names of the variables we pass to the method don’t have to match the names that the method uses (and often will not).  The method has a variable named numberOfItems, and we are giving it numberOfTables there in use #1, and numberOfGuests in use #2.  You can think of this as the code setting numberOfItems = numberOfTables.  It’s not using the variable numberOfTables itself, but rather copying its value into another variable named numberOfItems.</p>
+
+<p>As a last point with this example, since the value of these parameters are being copied into new variables (something we call passing parameters by value), if we make any changes inside the method to the variable, it will not affect any variable values outside of the method.  See the example below.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">addTen</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// the x inside the method will be changed</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">96</span><span class="o">;</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">addTen</span><span class="o">(</span><span class="n">y</span><span class="o">));</span> <span class="c1">// will print 106</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">y</span><span class="o">);</span> <span class="c1">// will print 96, y was never altered</span>
+
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">96</span><span class="o">;</span> <span class="c1">// even if the variable is the same name</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">addTen</span><span class="o">(</span><span class="n">x</span><span class="o">));</span> <span class="c1">// will print 106</span>
+<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// will print 96, the x outside of the method remains the same</span>
+
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="java-methods-inside-of-jsp-pages">Java Methods Inside of JSP Pages</h4>
+
+<p>We’re going to spend the next few labs creating methods inside of JSP pages.  This is actually not a great practice, so we will move out of doing this shortly.</p>
+
+<p>But for now, you need to know that using Java methods inside of a JSP requires some specific tags.  Each created method needs to be wrapped inside its own set of &lt;%! %&gt; tags.</p>
+
+<hr />
+
+<p>1.  Make a file in ROOT\test called method.jsp.</p>
+
+<p>2.  Use the following code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="err">&lt;</span>%!
+int addTen(int x) {
+    x = x + 10;
+    return (x);
+}
+%&gt;
+<span class="err">&lt;</span>%   
+int x = 96; // even if the variable is the same name
+out.println(addTen(x)); // will print 106
+out.println(x); // will print 96, even though a 2nd variable named x becomes 106 inside of addTen
+%&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>3.  Let’s walkthrough what’s happening when we call addTen(), in particular, the exact order of lines being executed by the program.  We’ll use some line numbers below to making referencing easier:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="mi">01</span> <span class="kt">int</span> <span class="nf">addTen</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+<span class="mi">02</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="o">;</span>
+<span class="mi">03</span>    <span class="k">return</span> <span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="mi">04</span> <span class="o">}</span>
+<span class="mi">05</span>
+<span class="mi">06</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">96</span><span class="o">;</span> <span class="c1">// even if the variable is the same name</span>
+<span class="mi">07</span> <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">addTen</span><span class="o">(</span><span class="n">x</span><span class="o">));</span> <span class="c1">// will print 106</span>
+<span class="mi">08</span> <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">);</span> <span class="c1">// will print 96</span>
+</code></pre>
+</div>
+
+<p>The program will run in this order:<br />
+Line 6<br />
+Line 7 - Starts<br />
+Line 1<br />
+Line 2<br />
+Line 3<br />
+Line 7 - Ends
+Line 8</p>
+
+<p>4.  Now, let’s change our file to use this code:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="err">&lt;</span>%!
+double calculateTotalCost(int numberOfItems, double costPerItem, double salesTaxPercent) {
+    double totalCost = numberOfItems * costPerItem * (1+salesTax);
+    return totalCost;  // the variable being returned must match the returnType of the method
+}
+%&gt;
+<span class="err">&lt;</span>%   
+    double salesTax = 0.07;
+
+    int numberOfTables = 4;
+    int costPerTable = 20.00;
+
+    int numberOfGuests = 100;
+    int costPerDinner = 25.00;
+
+    // use the calculateTotalCost method
+    double totalTableCost = calculateTotalCost(numberOfTables, costPerTable, salesTax);
+    double totalDinnerCost = calculateTotalCost(numberOfGuests, costPerDinner, salesTax);
+
+    // output examples
+    out.println(totalTableCost); 
+    out.println(calculateTotalCost(numberOfTables, costPerTable, salesTax));
+%&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p>5.  Take a few minutes to really look at this code.  Try altering it, or changing the calculation, or return type.  See if you can really follow along with what the code is doing.</p>
+
+<hr />
+
+<p class="success">That’s all for this lecture, see you in the lab!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

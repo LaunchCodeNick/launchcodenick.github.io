@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lab - Errors - Java Camp</title>
+<meta property="og:title" content="Lab - Errors" />
+<meta name="description" content="  45 minutes  Paired Exercise  Lab Objectives          Create errors      Find errors      Use try-catch blocks      " />
+<meta property="og:description" content="  45 minutes  Paired Exercise  Lab Objectives          Create errors      Find errors      Use try-catch blocks      " />
+<link rel="canonical" href="http://localhost:4000/units/unit3303_lab_errors.html" />
+<meta property="og:url" content="http://localhost:4000/units/unit3303_lab_errors.html" />
+<meta property="og:site_name" content="Java Camp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-09T16:56:17-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lab - Errors",
+    "datePublished": "2016-11-09T16:56:17-06:00",
+    "description": "  45 minutes  Paired Exercise  Lab Objectives          Create errors      Find errors      Use try-catch blocks      ",
+    "url": "http://localhost:4000/units/unit3303_lab_errors.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/launchcode.png" width="166" height="36" alt="Java Camp logo"></a>				
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="http://localhost:4000">Course Material</a></h6>
+		<h6><a href="http://localhost:4000/weeks/week3.html">Week 3 Material</a></h6>
+		<h6><a href="http://localhost:4000/days/day13.html">Day 13 Material</a></h6>
+		<ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<li>
+				<a href="/units/unit3301_welcome.html">Welcome to Day 13!</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3302_lecture_errors.html">Lecture - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3303_lab_errors.html">Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3304_debrief_errors.html">Debrief Lab - Errors</a>
+			</li>
+		
+		
+		
+			<li>
+				<a href="/units/unit3305_methods.html">Lecture - Methods</a>
+			</li>
+		
+		
+		</ul>
+	</section>
+</div>
+
+		</header>
+		<div class="main">
+			<section class="doc-content">
+				<section class="left-docs">
+					<h3>Lab - Errors</h3>
+					
+						<p class="description"><ul>
+  <li>45 minutes</li>
+  <li>Paired Exercise</li>
+  <li>Lab Objectives
+    <ul>
+      <li>Create errors</li>
+      <li>Find errors</li>
+      <li>Use try-catch blocks</li>
+    </ul>
+  </li>
+</ul>
+</p>                        
+					
+                    
+					<hr />
+
+<h4 id="error-lab">Error Lab</h4>
+
+<p>To start this lab, find a partner.  You will complete this first half of this lab separately, and then the lab will provide directions on how to work with your partner!</p>
+
+<p>1.  Create a new file in your ROOT\test folder called errors.jsp</p>
+
+<p>2.  In this file, create a small program with the following instructions:</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>Your program is going to perform wedding reception calculations.  It should figure out how many tables are needed, and then figure out the total cost of the reception assuming it only includes the cost of tables, food, and decorations.
+
+Here are some exercise guidelines:
+
+Your program should provide variables for the following items:
+* The number of guests wedding partner A invites
+* The number of guests wedding partner B invites
+* Seats per table
+* Cost per table
+* Cost per reception dinner plate
+* Total cost of decorations
+
+Your program should calculate and print the following items:
+* Total number of tables needed
+* Total cost for tables
+* Total cost for food
+* Total cost of decorations
+* Total wedding reception cost
+
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="create-errors">Create Errors</h4>
+
+<p>Hopefully, you have written a beautifully functional wedding reception calculator.  Now, we’re going to mess it up and hand it over to your partner to fix.</p>
+
+<p>3.  Syntax errors.  Create five syntax errors in your code.  They can be of any flavor you choose, but they must prevent compilation.</p>
+
+<p>Some dastardly ideas for you:<br />
+* Misspelled variables<br />
+* Missing semicolons<br />
+* Incorrect or missing keywords (such as int or double)</p>
+
+<p>4.  Logical errors.  Create three logical errors in your code.  They can be of any flavor you choose, but they shouldn’t prevent compilation.</p>
+
+<p>Some evil genius ideas for you: <br />
+* Incorrect math<br />
+* Using the wrong variables in math formulas</p>
+
+<p>5.  Run-time errors.  Create one run-time error in your code.</p>
+
+<hr />
+
+<h4 id="trade-programs">Trade Programs</h4>
+
+<p>6.  Exchange programs with your partner!</p>
+
+<hr />
+
+<h4 id="fixing-errors">Fixing Errors</h4>
+
+<p>7. Try running the program.  If your partner has completed their task, it should fail.</p>
+
+<p>8. Scan the program and read the code from the first line to the end.  See if you can follow the code, spotting and fixing any syntax errors as you go.  Keep running the program until all compilation errors are fixed.</p>
+
+<p class="info">Look at the type of error the page is reporting.  Is it a compilation error or processing error?  If you find a processing error, that means that compilation has succeeded.  Use try-catch blocks to contain any processing errors.</p>
+
+<p>9. Look at the output of the program and see if you can spot any math that seems off.  How does the program line up with your calculations on paper?</p>
+
+<p>10.  If the program’s output is incorrect, rescan the code and see if you can spot any logical errors.  Try different numbers of guests or seats per table, for example, to help spot more logical errors.</p>
+
+<hr />
+
+<p class="success">Congratulations, we’re finished with this lab.  See you in the debrief!</p>
+
+				</section>
+
+				
+			</section>
+			
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
